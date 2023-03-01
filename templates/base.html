@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/48983e326e.css" crossorigin="anonymous" type="text/css"> 
+    <script src="https://kit.fontawesome.com/48983e326e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -12,6 +12,36 @@
     <title>Coffee Book</title>
 </head>
 <body>
+
+  <header>
+    <nav class="nav-styl">
+      <div class="nav-wrapper">
+        <a href="{{ url_for('get_recipes') }}" class="brand-logo nav-logo">be home barista</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url_for('get_recipes') }}" class = "nav-anchor">Home</a></li>
+          <li><a href="#" class="nav-anchor">Recipes</a></li>
+          <li><a href="#" class="nav-anchor">Profile</a></li>
+          <li><a href="#" class="nav-anchor">Log In</a></li>
+          <li><a href="#" class="nav-anchor">Log Out</a></li>
+          <li><a href="#" class="nav-anchor">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <h4 class="center-align light-brown-text text-darken 4">be home barista</h4>
+      </li>
+      <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+      <li><a href="#" class="nav-anchor" >Recipes</a></li>
+      <li><a href="#" class="nav-anchor">Profile</a></li>
+      <li><a href="#" class="nav-anchor" >Log In</a></li>
+      <li><a href="#" class="nav-anchor" >Log Out</a></li>
+      <li><a href="#" class="nav-anchor">Register</a></li>
+    </ul>
+  </header>
+
 
     <h1>be home Barista</h1>
     {% block content %}

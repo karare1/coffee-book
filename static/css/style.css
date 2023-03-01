@@ -1,0 +1,22 @@
+body {
+    background-color: #F6F4F1!important;
+}
+
+.nav-styl {
+    background-color: #fff !important;
+}
+
+.nav-logo {
+    color: #846C63 !important;
+    font-weight: 700!important;
+}
+
+.nav-anchor {
+    color: #846C63 !important;
+    font-weight: 700!important;
+}
+
+.nav-anchor:hover {
+    background-color: #BDB1AD;
+    color: white!important;
+}
