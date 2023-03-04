@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align h3-styl">Sign Up</h3>
+
+<div class="row">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa-solid fa-user prefix"></i>
+          <input id="username" name="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa-solid fa-envelope-open-text prefix"></i>
+          <input id="email" name="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa-solid fa-unlock prefix"></i>
+          <input id="password" name="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="input-field col s12">
+          <i class="fa-solid fa-lock prefix"></i>
+          <input id="confirm_password" name="confirm_password" type="password" class="validate">
+          <label for="confirm_password">Confirm password</label>
+        </div>
+      </div> -->
+
+      <div class="center-align">
+      <button class="btn waves-effect waves-light btn-large col s12 btn-styl" type="submit" name="action">Submit
+        <!-- <i class="material-icons right">send</i> -->
+      </button>
+      </div>
+
+    </form>
+  </div>
+  <div class="center-align">
+    <p>Already Signed Up? <a href="" class="p-sign-styl">Log In</a></p> 
+  </div>
+
+
+
+
+
+{% endblock %}
