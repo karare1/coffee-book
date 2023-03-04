@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/48983e326e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-    <title>Coffee Book</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/48983e326e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  {% block styles %}
+  {% endblock %}
+  <title>Coffee Book</title>
 </head>
+
 <body>
 
   <header>
     <nav class="nav-styl">
       <div class="nav-wrapper">
-        <a href="{{ url_for('get_recipes') }}" class="brand-logo nav-logo">be home barista</a>
+        <a href="{{ url_for('get_recipes') }}" class="brand-logo nav-logo logo-styl">be home barista <img src="{{ url_for('static', filename='/img/coffee-time.png') }}" alt="cofee logo" class="coffee-logo brand-logo nav-logo"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('get_recipes') }}" class = "nav-anchor">Home</a></li>
+          <li><a href="{{ url_for('get_recipes') }}" class="nav-anchor">Home</a></li>
           <li><a href="#" class="nav-anchor">Recipes</a></li>
           <li><a href="#" class="nav-anchor">Profile</a></li>
           <li><a href="#" class="nav-anchor">Log In</a></li>
           <li><a href="#" class="nav-anchor">Log Out</a></li>
-          <li><a href="#" class="nav-anchor">Register</a></li>
+          <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
         </ul>
       </div>
     </nav>
@@ -34,22 +37,50 @@
         <h4 class="center-align light-brown-text text-darken 4">be home barista</h4>
       </li>
       <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-      <li><a href="#" class="nav-anchor" >Recipes</a></li>
+      <li><a href="#" class="nav-anchor">Recipes</a></li>
       <li><a href="#" class="nav-anchor">Profile</a></li>
-      <li><a href="#" class="nav-anchor" >Log In</a></li>
-      <li><a href="#" class="nav-anchor" >Log Out</a></li>
-      <li><a href="#" class="nav-anchor">Register</a></li>
+      <li><a href="#" class="nav-anchor">Log In</a></li>
+      <li><a href="#" class="nav-anchor">Log Out</a></li>
+      <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
     </ul>
   </header>
 
+  {% block content %}
+  {% endblock %}
 
-    <h1>be home Barista</h1>
-    {% block content %}
-    {% endblock %}
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
+  <footer class="page-footer foot-styl">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="foot-font">Footer Content</h5>
+          <p class="foot-font">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="foot-font">Social</h5>
+          <ul class="ul-grid">
+            <li><a class="foot-font" href="#!"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a class="foot-font" href="#!"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a class="foot-font" href="#!"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a class="foot-font" href="#!"><i class="fa-brands fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container foot-font">
+        © 2023 karare
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}
+  {% endblock %}
+
 </body>
+
 </html>
