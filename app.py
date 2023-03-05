@@ -48,6 +48,35 @@ def sign_up():
     return render_template("sign_up.html")
 
 
+@app.route("/login", methods=["GET", "POST"])
+def log_in():
+    if request.method == "POST":
+        # check if username exists in db
+        exist_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if exist_user:
+
+            if check_password_hash(
+                exist_user["password"], request.form.get("password")):
+                    session["check_user"] = request.form.get(
+                        "username").lower()
+                    flash("Hello, {}. Ready for a cup of Joe?".format(
+                        request.form.get("username")))
+
+            else:
+                flash(
+                    "Oops, enter the correct username and password to Log In")
+                return redirect(url_for("log_in"))
+
+        else:
+
+            flash("Oops, enter the correct username and password to Log In")
+            return redirect(url_for("log_in"))
+
+    return render_template("log_in.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
