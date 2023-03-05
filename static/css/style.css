@@ -65,9 +65,9 @@ background-color: #BDB1AD;
 }
 
 .coffee-logo {
-    width: 50px;
-    height: 50px;
-    margin-top: 3%;
+    width: 40px;
+    height: 40px;
+    margin-top: 6%;
     margin-left: 2%;
 }
 
@@ -77,6 +77,17 @@ background-color: #BDB1AD;
     font-size: 1.5rem;
 }
 
+.flash-styl {
+    font-size: 1.5rem;
+    color: #846C63;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.div-flash-styl {
+background-color: #F0E5D7;
+
+}
 
 /* .grid { 
     display: grid;

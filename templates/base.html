@@ -45,8 +45,22 @@
     </ul>
   </header>
 
-  {% block content %}
-  {% endblock %}
+  <section>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="div-flash-styl">
+            <p class="center-align flash-styl">{{ message }}<p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </section>
+
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
 
   <footer class="page-footer foot-styl">
     <div class="container">
