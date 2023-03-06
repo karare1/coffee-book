@@ -24,7 +24,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('get_recipes') }}" class="nav-anchor">Home</a></li>
           <li><a href="#" class="nav-anchor">Recipes</a></li>
-          <li><a href="#" class="nav-anchor">Profile</a></li>
+          <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
           <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
           <li><a href="#" class="nav-anchor">Log Out</a></li>
           <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
@@ -38,7 +38,7 @@
       </li>
       <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
       <li><a href="#" class="nav-anchor">Recipes</a></li>
-      <li><a href="#" class="nav-anchor">Profile</a></li>
+      <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
       <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
       <li><a href="#" class="nav-anchor">Log Out</a></li>
       <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>

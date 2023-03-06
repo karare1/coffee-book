@@ -88,7 +88,9 @@ background-color: #BDB1AD;
 background-color: #F0E5D7;
 
 }
-
+.prof-styl {
+    color: #846C63;
+}
 /* .grid { 
     display: grid;
     grid-template-columns: 1fr 2fr;      

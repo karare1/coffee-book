@@ -42,9 +42,9 @@ def sign_up():
         }
         mongo.db.users.insert_one(sign_up)
 
-        session["new_user"] = request.form.get("username").lower()
+        session["user_record"] = request.form.get("username").lower()
         flash("You have been registered!")
-
+        return redirect(url_for("profile", username=session["user_record"]))
     return render_template("sign_up.html")
 
 
@@ -59,10 +59,12 @@ def log_in():
 
             if check_password_hash(
                 exist_user["password"], request.form.get("password")):
-                    session["check_user"] = request.form.get(
+                    session["user_record"] = request.form.get(
                         "username").lower()
                     flash("Hello, {}. Ready for a cup of Joe?".format(
                         request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user_record"]))
 
             else:
                 flash(
@@ -75,6 +77,13 @@ def log_in():
             return redirect(url_for("log_in"))
 
     return render_template("log_in.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user_record"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":
