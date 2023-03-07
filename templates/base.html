@@ -19,15 +19,18 @@
   <header>
     <nav class="nav-styl">
       <div class="nav-wrapper">
-        <a href="{{ url_for('get_recipes') }}" class="brand-logo nav-logo logo-styl">be home barista <img src="{{ url_for('static', filename='/img/coffee-time.png') }}" alt="cofee logo" class="coffee-logo brand-logo nav-logo"></a>
+        <a href="{{ url_for('index') }}" class="brand-logo nav-logo logo-styl">be home barista <img src="{{ url_for('static', filename='/img/coffee-time.png') }}" alt="cofee logo" class="coffee-logo brand-logo nav-logo"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('get_recipes') }}" class="nav-anchor">Home</a></li>
-          <li><a href="#" class="nav-anchor">Recipes</a></li>
+          <li><a href="{{ url_for('index') }}" class="nav-anchor">Home</a></li>
+          <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
+        {% if session.user_record %}
           <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
-          <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
-          <li><a href="#" class="nav-anchor">Log Out</a></li>
+          <li><a href="{{ url_for('log_out') }}" class="nav-anchor">Log Out</a></li>
+        {% else %}
           <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
+          <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
+        {% endif %} 
         </ul>
       </div>
     </nav>
@@ -36,12 +39,15 @@
       <li>
         <h4 class="center-align light-brown-text text-darken 4">be home barista</h4>
       </li>
-      <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-      <li><a href="#" class="nav-anchor">Recipes</a></li>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
+    {% if session.user_record %}
       <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
-      <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
-      <li><a href="#" class="nav-anchor">Log Out</a></li>
+      <li><a href="{{ url_for('log_out') }}" class="nav-anchor">Log Out</a></li>
+    {% else %}
       <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
+      <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
+    {% endif %}
     </ul>
   </header>
 
