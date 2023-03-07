@@ -55,7 +55,7 @@ background-color: #BDB1AD;
     color: #846C63;
 }
 
-.fa-solid {
+.fa-user, .fa-key, .fa-envelope-open-text  {
     color: #846C63!important;
 }
 
@@ -90,6 +90,10 @@ background-color: #F0E5D7;
 }
 .prof-styl {
     color: #846C63;
+}
+
+.card_link {
+    color:#846C63
 }
 /* .grid { 
     display: grid;
