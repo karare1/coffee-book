@@ -19,9 +19,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = mongo.db.recipes.find()
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/recipes")
+def recipes():
+    recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -51,19 +56,16 @@ def sign_up():
 @app.route("/login", methods=["GET", "POST"])
 def log_in():
     if request.method == "POST":
-        # check if username exists in db
         exist_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
         if exist_user:
-
-            if check_password_hash(
-                exist_user["password"], request.form.get("password")):
-                    session["user_record"] = request.form.get(
+            if check_password_hash(exist_user
+                                   ["password"], request.form.get("password")):
+                session["user_record"] = request.form.get(
                         "username").lower()
-                    flash("Hello, {}. Ready for a cup of Joe?".format(
+                flash("Hello, {}. Ready for a cup of Joe?".format(
                         request.form.get("username")))
-                    return redirect(url_for(
+                return redirect(url_for(
                         "profile", username=session["user_record"]))
 
             else:
@@ -95,6 +97,12 @@ def log_out():
     flash("Log in for the best experience")
     session.pop("user_record")
     return redirect(url_for("log_in"))
+
+
+@app.route("/full_recipe/<Id_R>")
+def full_recipe(Id_R):
+    full_recipe = mongo.db.recipes.find_one({"_id": ObjectId(Id_R)})
+    return render_template("full_recipe.html", recipe=full_recipe)
 
 
 if __name__ == "__main__":
