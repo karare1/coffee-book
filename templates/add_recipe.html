@@ -21,16 +21,11 @@
 {{ recipe.method }}<br>
 {% endfor %}
 
-<br>
-<br>
-<br>
-
-
-<div class="row">
+<div class="row card-panel grey lighten-5">
     <form class="col s12 offset-m1" method="POST" action="">
       <div class="row">
         <div class="input-field col s10">
-          <input id="recipe_name" name="recipe_name" type="text" class="validate" data-length="80" required>
+          <input id="recipe_name" name="recipe_name" type="text" class="validate" data-length="60" required>
           <label for="recipe_name">Recipe Name</label>
         </div>
       </div>
@@ -42,7 +37,7 @@
       </div>
       <div class="row">
         <div class="input-field col s10">
-          <input id="recipe_intro" name="recipe_intro" type="text" class="validate" data-length="150" required>
+          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" data-length="150" required></textarea>
           <label for="recipe_intro">Recipe introduction</label>
         </div>
       </div>
@@ -94,7 +89,7 @@
                 <input type="text" id="ingredients" class="validate" placeholder= "e.g. 18g ground espresso" required>
                 <label for="ingredients"></label>
             </div>
-            <button type="button" class="waves-effect waves-light btn" id="repeatDivBtn" data-increment="1">Add More Input</button>            
+            <button type="button" class="waves-effect waves-light btn styl" id="repeatDivBtn" data-increment="1">Add More</button>            
       </div>
       <div class="col s10"></div>
     </div>
@@ -102,15 +97,15 @@
 
     <div class="row">
         <div class="col s12 text-center">
-            <h6>Ingredients</h6>
+            <h6>Method</h6>
         </div>
         <div class="col s10"></div>
            <div class="col s10">             
             <div class="input-field repDiv" id="repDiv">
-                <input type="text" id="ingredients" class="validate" placeholder= "e.g. 18g ground espresso" required>
+                <input type="text" id="ingredients" class="validate" placeholder= "e.g. Pour the espresso over the chocolate or sauce in the cup or mug." required>
                 <label for="ingredients"></label>
             </div>
-            <button type="button" class="waves-effect waves-light btn" id="repeatBtn" data-increment="1">Add More Input</button>            
+            <button type="button" class="waves-effect waves-light btn styl " id="repeatBtn" data-increment="1">Add More</button>            
       </div>
       <div class="col s10"></div>
     </div>
