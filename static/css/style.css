@@ -51,7 +51,6 @@ background-color: #BDB1AD;
 }
 
 .h3-styl {
-    color: #88AAA9;
     color: #846C63;
 }
 
@@ -92,8 +91,33 @@ background-color: #F0E5D7;
     color: #846C63;
 }
 
-.card_link {
-    color:#846C63
+.card-link {
+   font-weight: 500;
+   font-size: 1.5rem;
+   color: #846C63!important;
+}
+
+.div-card-link {
+    text-align: center;
+    background-color: #F0E5D7!important;
+}
+
+.card-link:hover {
+    opacity: 0.5;
+}
+
+/* .link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+    } */
+
+.back-btn-styl {
+    margin-top: 2%;
 }
 /* .grid { 
     display: grid;
