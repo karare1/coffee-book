@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- <h2>I love coffee. It wakes you up, makes mornings bearable, and best of all, 
+    <h2>I love coffee. It wakes you up, makes mornings bearable, and best of all, 
         tastes delicious. Is there anything it can't do?</h2>
     <p>And even better: There are a ton of coffee recipes you can make at home, 
         with ingredients you already have in the fridge.</p>
@@ -16,7 +16,7 @@
         {{ recipe.serves }}<br>
         {{ recipe.ingredients }}<br>
         {{ recipe.method }}<br>
-    {% endfor %} -->
+    {% endfor %}
 
     <div class="row">
         {% for recipe in recipes %}
@@ -26,11 +26,12 @@
               <img src="{{ recipe.recipe_image }}">
               <span class="card-title">{{ recipe.recipe_name }}</span>
             </div>
-            <div class="card-content">
+            <div class="card-content rec-intro-styl">
               <p>{{ recipe.intro }}</p>
             </div>
-            <div class="card-action card-link">
-              <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="card-link" aria-label="Link to full recipe">Full Recipe</a>
+            <div class="card-action div-card-link">
+              <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="card-link" aria-label="Link to full recipe">
+                <span class="link"></span>Full Recipe</a>
             </div>
           </div>
         </div>
