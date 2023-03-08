@@ -105,6 +105,11 @@ def full_recipe(Id_R):
     return render_template("full_recipe.html", recipe=full_recipe)
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
