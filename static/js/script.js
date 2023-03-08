@@ -3,7 +3,7 @@ $(document).ready(function(){
   });
 
 $(document).ready(function() {
-  $('input#recipe_name, input#recipe_intro').characterCounter();
+  $('input#recipe_name, textarea#recipe_intro').characterCounter();
 });
 
 $(document).ready(function(){
@@ -20,7 +20,7 @@ $(document).ready(function () {
 		$('#repeatDiv').unwrap();
 		$($repeatDiv).insertAfter($(".repeatDiv").last());
 		$(".repeatDiv").last().attr('id',   "repeatDiv" + '_' + $newid);
-		$("#repeatDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn removeDivBtn" data-id="repeatDiv'+'_'+ $newid+'">Remove</button></div>');
+		$("#repeatDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn styl removeDivBtn" data-id="repeatDiv'+'_'+ $newid+'">Remove</button></div>');
 		$newid++;
 		$(this).data("increment", $newid);
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
 		$('#repDiv').unwrap();
 		$($repeatDiv).insertAfter($(".repDiv").last());
 		$(".repDiv").last().attr('id',   "repDiv" + '_' + $newid);
-		$("#repDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn removeBtn" data-id="repDiv'+'_'+ $newid+'">Remove</button></div>');
+		$("#repDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn styl removeBtn" data-id="repDiv'+'_'+ $newid+'">Remove</button></div>');
 		$newid++;
 		$(this).data("increment", $newid);
 

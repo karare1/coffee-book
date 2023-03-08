@@ -89,6 +89,7 @@ background-color: #F0E5D7;
 }
 .prof-styl {
     color: #846C63;
+    padding:2%;
 }
 
 .card-link {
@@ -106,6 +107,24 @@ background-color: #F0E5D7;
     opacity: 0.5;
 }
 
+.back-btn-styl {
+    margin-top: 2%;
+}
+
+.styl {
+    background-color: #846C63;
+}
+
+.styl:hover {
+    background-color: #b4998e;
+}
+/* .grid { 
+    display: grid;
+    grid-template-columns: 1fr 2fr;      
+} */
+
+/* color: #88AAA9!important; */
+
 /* .link {
     position: absolute;
     width: 100%;
@@ -115,13 +134,3 @@ background-color: #F0E5D7;
     z-index: 1;
     text-align: center;
     } */
-
-.back-btn-styl {
-    margin-top: 2%;
-}
-/* .grid { 
-    display: grid;
-    grid-template-columns: 1fr 2fr;      
-} */
-
-/* color: #88AAA9!important; */
