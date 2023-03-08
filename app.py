@@ -107,7 +107,8 @@ def full_recipe(Id_R):
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    categories = mongo.db.categories.find().sort("category_name")
+    return render_template("add_recipe.html", catgs=categories)
 
 
 if __name__ == "__main__":

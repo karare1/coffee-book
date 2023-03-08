@@ -46,11 +46,9 @@
         <div class="input-field col s5">
             <select id="category_name" name="category_name" class="validate" required>
                 <option value="" disabled selected>Select</option>
-                <option value="hot coffee">Hot Coffee</option>
-                <option value="cold coffee">Cold Coffee</option>
-                <option value="decaf coffee">Decaf Coffee</option>
-                <option value="cappuccino">Cappuccino</option>
-                <option value="seasonal">Seasonal</option>
+                {% for catg in catgs %}
+                  <option value="{{ catg.category_name }}">{{ catg.category_name }}</option>
+                {% endfor %}
             </select>
             <label for="category_name">Category</label>
         </div>
