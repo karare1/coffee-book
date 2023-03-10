@@ -199,9 +199,13 @@ padding-top: 1px;
    
 }
 
+.edit-btn {
+   margin-right: 10%;
+}
 
-
-
+.edit-div {
+    margin-top: 5%;
+}
 /* .full-rec-name {
     margin: 0px;
 }
