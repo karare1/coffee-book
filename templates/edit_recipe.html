@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<!-- <a href="{{ url_for('profile', username=session['user_record']) }}" class="waves-effect waves-light btn-small brown lighten-1 back-btn-styl "><i class="fa-solid fa-backward left"></i>Back to profile</a> -->
+<h3 class="center-align h3-styl">Edit your recipe</h3>
+
+
+
+
+<!-- {% for recipe in recipes %}
+{{ recipe.recipe_image }}<br>
+{{ recipe.category_name }}<br>
+{{ recipe.recipe_name }}<br>
+{{ recipe.recipe_intro }}<br>
+{{ recipe.preparation_time }}<br>
+{{ recipe.difficulty }}<br>
+{{ recipe.serves }}<br>
+{{ recipe.ingredients }}<br>
+{{ recipe.method }}<br>
+{% endfor %} -->
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12 offset-m1" method="POST" action="{{ url_for('edit_recipe', Id_R=recipe._id ) }}">
+      <div class="row">
+        <div class="input-field col s10">
+          <input id="recipe_name" name="recipe_name" type="text" class="validate" data-length="60" required>
+          <label for="recipe_name">Recipe Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s10">
+          <input id="recipe_url" name="recipe_url" type="url" pattern="https://.*" class="validate">
+          <label for="recipe_url">Input image URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s10">
+          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" data-length="150" required></textarea>
+          <label for="recipe_intro">Recipe introduction</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s5">
+            <select id="category_name" name="category_name" class="validate" required>
+                <option value="" disabled selected>Select</option>
+                {% for catg in catgs %}
+                  <option value="{{ catg.category_name }}">{{ catg.category_name }}</option>
+                {% endfor %}
+            </select>
+            <label for="category_name">Category</label>
+        </div>
+    
+    
+        <div class="input-field col s5">
+            <select id="difficulty" name="difficulty" class="validate" required>
+                <option value="" disabled selected>Select</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <label for="difficulty">Difficulty</label>
+        </div>
+      </div>
+       
+      <div class="row">
+        <div class="input-field col s5">
+          <input id="preparation_time" name="preparation_time" type="text" min="1" max="5000" class="validate" required>
+          <label for="preparation_time">Time of preparation</label>
+        </div>
+    
+        <div class="input-field col s5">
+            <input id="serves" name="serves" type="number" min="1" max="30" class="validate" required>
+            <label for="serves">Serves</label>
+        </div>
+      </div>
+        
+    <div class="row">
+        <div class="col s12 text-center">
+            <h6>Ingredients</h6>
+        </div>
+        <div class="col s10"></div>
+           <div class="col s10">             
+            <div class="input-field repeatDiv" id="repeatDiv">
+                <input type="text" id="ingredients" name="ingredients" class="validate" placeholder= "e.g. 18g ground espresso" required>
+                <label for="ingredients"></label>
+            </div>
+            <button type="button" class="waves-effect waves-light btn styl" id="repeatDivBtn" data-increment="1">Add More</button>            
+      </div>
+      <div class="col s10"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col s12 text-center">
+            <h6>Method</h6>
+        </div>
+        <div class="col s10"></div>
+           <div class="col s10">             
+            <div class="input-field repDiv" id="repDiv">
+                <input type="text" id="method" name="method" class="validate" placeholder= "e.g. Pour the espresso over the chocolate or sauce in the cup or mug." required>
+                <label for="method"></label>
+            </div>
+            <button type="button" class="waves-effect waves-light btn styl " id="repeatBtn" data-increment="1">Add More</button>            
+      </div>
+      <div class="col s10"></div>
+      </div>
+
+      <div class="row">
+        <div class="col s10 center-align">
+            <button class="btn-large btn styl text-shadow" type="submit"  >
+                Edit your recipe </i><i class="fa-solid fa-file-pen right"></i>
+            </button>
+        </div>
+    </div>
+
+    </form>
+</div>
+
+
+{% endblock %}
