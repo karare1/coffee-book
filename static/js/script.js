@@ -13,7 +13,9 @@ $(document).ready(function(){
   M.textareaAutoResize($('#textarea1'));
 });
 
-
+$(document).ready(function(){
+    $('.tabs').tabs();
+  });
 
   
   $(document).ready(function(){
