@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<a href="{{ url_for('recipes') }}" 
+<!-- <a href="{{ url_for('recipes') }}" 
     class="waves-effect waves-light btn-small brown lighten-1 back-btn-styl back-full-rec">
-    <i class="fa-solid fa-backward left"></i>Back to recipes</a>
+    <i class="fa-solid fa-backward left"></i>Back to recipes</a> -->
 
     
     <div class="row">
@@ -45,10 +45,10 @@
 
 <div class="row">
 <div class="col s6">
-<a class="waves-effect waves-teal btn-flat">Done</a>
+<a href="" class="waves-effect waves-teal btn-flat">Done</a>
 </div>
 <div class="col s6"></div>
-<a class="waves-effect waves-teal btn-flat">Edit</a>
+<a href="{{ url_for('edit_recipe', Id_R=recipe._id) }}" class="waves-effect waves-teal btn-flat">Edit</a>
 </div>
 </div>
 
