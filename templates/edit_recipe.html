@@ -22,22 +22,23 @@
 {% endfor %} -->
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12 offset-m1" method="POST" action="{{ url_for('edit_recipe', Id_R=recipe._id ) }}">
+    <form class="col s12 offset-m1 " method="POST" action="{{ url_for('edit_recipe', Id_R=recipe._id ) }}">
       <div class="row">
         <div class="input-field col s10">
-          <input id="recipe_name" name="recipe_name" type="text" class="validate" data-length="60" required>
+          <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" class="validate" data-length="60" required>
           <label for="recipe_name">Recipe Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s10">
-          <input id="recipe_url" name="recipe_url" type="url" pattern="https://.*" class="validate">
+          <input id="recipe_url" name="recipe_url" type="url" value="{{ recipe.recipe_image }}" pattern="https://.*" class="validate">
           <label for="recipe_url">Input image URL</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s10">
-          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" data-length="150" required></textarea>
+          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" data-length="150" required>
+          {{- recipe.recipe_intro -}}</textarea>
           <label for="recipe_intro">Recipe introduction</label>
         </div>
       </div>
@@ -45,15 +46,19 @@
       <div class="row">
         <div class="input-field col s5">
             <select id="category_name" name="category_name" class="validate" required>
-                <option value="" disabled selected>Select</option>
+                <option value="" disabled>Select</option>
                 {% for catg in catgs %}
-                  <option value="{{ catg.category_name }}">{{ catg.category_name }}</option>
+                  {% if catg.category_name == recipe.category_name %}
+                    <option value="{{ catg.category_name }}" selected>{{ catg.category_name }}</option>
+                  {% else %}
+                    <option value="{{ catg.category_name }}">{{ catg.category_name }}</option>
+                  {% endif %}
                 {% endfor %}
             </select>
             <label for="category_name">Category</label>
         </div>
     
-    
+        
         <div class="input-field col s5">
             <select id="difficulty" name="difficulty" class="validate" required>
                 <option value="" disabled selected>Select</option>
@@ -65,14 +70,15 @@
         </div>
       </div>
        
+     
       <div class="row">
         <div class="input-field col s5">
-          <input id="preparation_time" name="preparation_time" type="text" min="1" max="5000" class="validate" required>
+          <input id="preparation_time" name="preparation_time" type="text" value="{{ recipe.preparation_time }}" min="1" max="5000" class="validate" required>
           <label for="preparation_time">Time of preparation</label>
         </div>
     
         <div class="input-field col s5">
-            <input id="serves" name="serves" type="number" min="1" max="30" class="validate" required>
+            <input id="serves" name="serves" type="number" value="{{ recipe.serves }}" min="1" max="30" class="validate" required>
             <label for="serves">Serves</label>
         </div>
       </div>
@@ -84,7 +90,8 @@
         <div class="col s10"></div>
            <div class="col s10">             
             <div class="input-field repeatDiv" id="repeatDiv">
-                <input type="text" id="ingredients" name="ingredients" class="validate" placeholder= "e.g. 18g ground espresso" required>
+                <textarea type="text" id="ingredients" name="ingredients" class="materialize-textarea validate" placeholder= "e.g. 18g ground espresso" required>
+                {{- recipe.ingredients -}}</textarea>
                 <label for="ingredients"></label>
             </div>
             <button type="button" class="waves-effect waves-light btn styl" id="repeatDivBtn" data-increment="1">Add More</button>            
@@ -98,23 +105,42 @@
             <h6>Method</h6>
         </div>
         <div class="col s10"></div>
-           <div class="col s10">             
+           <div class="col s10"> 
+           
             <div class="input-field repDiv" id="repDiv">
-                <input type="text" id="method" name="method" class="validate" placeholder= "e.g. Pour the espresso over the chocolate or sauce in the cup or mug." required>
+                <input type="text" id="method" name="method" value="{{ recipe.method }}" class="validate" placeholder= "e.g. Pour the espresso over the chocolate or sauce in the cup or mug." required>              
                 <label for="method"></label>
             </div>
+          
             <button type="button" class="waves-effect waves-light btn styl " id="repeatBtn" data-increment="1">Add More</button>            
       </div>
       <div class="col s10"></div>
       </div>
 
       <div class="row">
-        <div class="col s10 center-align">
+        <div class=" col s9 center-align edit-div">
+            <!-- cancel button -->
+            <a href="{{ url_for('profile', username=session['user_record']) }}"  class="btn-large edit-btn styl text-shadow">
+                Cancel <i class="fa-solid fa-rectangle-xmark right" ></i>
+            </a>
+            <button type="submit" class="btn-large styl text-shadow">
+                Edit you recipe <i class="fa-solid fa-file-pen right"></i>
+            </button>
+        </div>
+    </div>
+
+
+<!-- 
+      <div class="row">
+        <div class="col s12 center-align">
+          <a href="{{ url_for('recipes') }}" class="btn-large styl text-shadow">
+            Cancel <i class="fas fa-times-circle right"></i>
+        </a>
             <button class="btn-large btn styl text-shadow" type="submit"  >
                 Edit your recipe </i><i class="fa-solid fa-file-pen right"></i>
             </button>
         </div>
-    </div>
+    </div> -->
 
     </form>
 </div>
