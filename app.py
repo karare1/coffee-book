@@ -87,7 +87,13 @@ def profile(username):
         {"username": session["user_record"]})["username"]
 
     if session["user_record"]:
-        return render_template("profile.html", username=username)
+        recipes = list(mongo.db.recipes.find(
+            {"recipe_by": username}))
+        # Id_U = mongo.db.users.find_one({"_id": ObjectId(Id_U)})   
+        # favourites = username["favourites"]
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
+            # favourites=favourites)
 
     return redirect(url_for("log_in"))
 
