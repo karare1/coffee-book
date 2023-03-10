@@ -9,7 +9,7 @@
 
 
 
-{% for recipe in recipes %}
+<!-- {% for recipe in recipes %}
 {{ recipe.recipe_image }}<br>
 {{ recipe.category_name }}<br>
 {{ recipe.recipe_name }}<br>
@@ -19,7 +19,7 @@
 {{ recipe.serves }}<br>
 {{ recipe.ingredients }}<br>
 {{ recipe.method }}<br>
-{% endfor %}
+{% endfor %} -->
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12 offset-m1" method="POST" action="{{ url_for('add_recipe') }}">
@@ -31,7 +31,7 @@
       </div>
       <div class="row">
         <div class="input-field col s10">
-          <input id="recipe_url" name="recipe_url" type="url" class="validate">
+          <input id="recipe_url" name="recipe_url" type="url" pattern="https://.*" class="validate">
           <label for="recipe_url">Input image URL</label>
         </div>
       </div>
@@ -67,8 +67,8 @@
        
       <div class="row">
         <div class="input-field col s5">
-          <input id="preparation_time" name="preparation_time" type="text" class="validate" required>
-          <label for="preparation_time">Time of preparation (in minutes)</label>
+          <input id="preparation_time" name="preparation_time" type="text" min="1" max="5000" class="validate" required>
+          <label for="preparation_time">Time of preparation</label>
         </div>
     
         <div class="input-field col s5">
