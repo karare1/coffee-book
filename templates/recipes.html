@@ -19,6 +19,25 @@
     {% endfor %} -->
 
     <div class="row">
+      <form action="{{ url_for('find') }}" method="post" class="col s12">
+          <div class="row valign-wrapper center-align">
+              <div class="input-field col s12 m8">
+                  <i class="fas fa-search prefix gen-font"></i>
+                  <input type="text" name="question" id="question" minlength="3" class="validate" required>
+                  <label for="question">Find your recipe</label>
+              </div>
+              <div class="col s12 m4">
+                  <a href="{{ url_for('recipes') }}" class="btn styl text-shadow">Reset</a>
+                  <button type="submit" class="btn styl text-shadow">
+                      <i class="fas fa-search left"></i> Find
+                  </button>
+              </div>
+          </div>
+      </form>
+  </div>
+
+    
+    <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
           <div class="card">
