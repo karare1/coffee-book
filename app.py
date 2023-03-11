@@ -18,7 +18,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 @app.route("/index")
 def index():
@@ -28,6 +27,13 @@ def index():
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/find", methods=["GET", "POST"])
+def find():
+    question = request.form.get("question")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": question}}))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -131,7 +137,8 @@ def add_recipe():
         flash("Your recipe has been added")
         return redirect(url_for("recipes"))
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", catgs=categories)
+    difficulties = mongo.db.difficulties.find().sort("difficulty", 1)
+    return render_template("add_recipe.html", catgs=categories, diff=difficulties)
 
 
 @app.route("/edit_recipe/<Id_R>", methods=["GET", "POST"])
@@ -154,7 +161,8 @@ def edit_recipe(Id_R):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(Id_R)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, catgs=categories)
+    difficulties = mongo.db.difficulties.find().sort("difficulty", 1)
+    return render_template("edit_recipe.html", recipe=recipe, catgs=categories, diff=difficulties)
 
 
 @app.route("/delete_recipe/<Id_R>")
