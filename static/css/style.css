@@ -176,7 +176,6 @@ background-color: #F0E5D7;
 }
 
 .icon-styl {
-    color: #846C63;
     padding-right: 10%;
     font-size: 1.5rem;
     color: #88AAA9;
@@ -184,6 +183,8 @@ background-color: #F0E5D7;
 
 .block-styl {
 border-left-color:  #88AAA9;
+margin-top: 3%;
+margin-bottom: 12%;
 }
 
 .card-color {
@@ -205,6 +206,15 @@ padding-top: 1px;
 
 .edit-div {
     margin-top: 5%;
+}
+
+.btns {
+background-color: #88AAA9;
+color: white;
+}
+
+.btn-height {
+   margin-top: 25%;
 }
 /* .full-rec-name {
     margin: 0px;
