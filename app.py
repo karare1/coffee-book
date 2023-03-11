@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -135,7 +136,23 @@ def add_recipe():
 
 @app.route("/edit_recipe/<Id_R>", methods=["GET", "POST"])
 def edit_recipe(Id_R):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(Id_R)})
+    if request.method == "POST":
+        submit = {
+            "recipe_image": request.form.get("recipe_url"),
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_intro": request.form.get("recipe_intro"),
+            "preparation_time": request.form.get("preparation_time"),
+            "difficulty": request.form.get("difficulty"),
+            "serves": request.form.get("serves"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "recipe_by": session["user_record"]
+        }
+        mongo.db.recipes.replace_one({"_id": ObjectId(Id_R)}, submit, True)
+        flash("Your updated recipe has been stored")
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(Id_R)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, catgs=categories)
 
