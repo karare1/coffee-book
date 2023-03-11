@@ -137,7 +137,7 @@ def add_recipe():
 @app.route("/edit_recipe/<Id_R>", methods=["GET", "POST"])
 def edit_recipe(Id_R):
     if request.method == "POST":
-        submit = {
+        update = {
             "recipe_image": request.form.get("recipe_url"),
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -149,12 +149,19 @@ def edit_recipe(Id_R):
             "method": request.form.getlist("method"),
             "recipe_by": session["user_record"]
         }
-        mongo.db.recipes.replace_one({"_id": ObjectId(Id_R)}, submit, True)
+        mongo.db.recipes.replace_one({"_id": ObjectId(Id_R)}, update, True)
         flash("Your updated recipe has been stored")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(Id_R)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, catgs=categories)
+
+
+@app.route("/delete_recipe/<Id_R>")
+def delete_recipe(Id_R):
+    mongo.db.recipes.delete_one({"_id": ObjectId(Id_R)})
+    flash("Your recipe has been removed")
+    return redirect(url_for("profile", username=session['user_record']))
 
 
 if __name__ == "__main__":
