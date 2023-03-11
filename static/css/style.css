@@ -11,6 +11,15 @@ body {
     flex-direction: column;
   }
 
+.img-back{
+background-image: url(../img/coffee-back.jpg);
+width:100%;
+height: 200px;
+background-position:center;
+background-size:cover;
+background-repeat: no-repeat; 
+}
+
   main {
     flex: 1 0 auto;
   }
@@ -38,7 +47,7 @@ body {
     background-color: #F0E5D7 !important;
 }
 
-.foot-font{
+.gen-font{
 color: #846C63 !important;
 }
 
@@ -216,6 +225,13 @@ color: white;
 .btn-height {
    margin-top: 25%;
 }
+
+.add-btn{
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+
 /* .full-rec-name {
     margin: 0px;
 }
