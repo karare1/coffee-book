@@ -18,7 +18,12 @@
         {{ recipe.method }}<br>
     {% endfor %} -->
 
-    <div class="row">
+
+      <h3 class="center-align gen-font">Our Coffee Recipes</h3>
+
+
+
+    <div class="row find-styl">
       <form action="{{ url_for('find') }}" method="post" class="col s12">
           <div class="row valign-wrapper center-align">
               <div class="input-field col s12 m8">
@@ -51,7 +56,7 @@
             </div>
             <div class="card-action div-card-link">
               <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="card-link" aria-label="Link to full recipe">
-                <span class="link"></span>Full Recipe</a>
+                <span class="link"></span>Discover Recipe</a>
             </div>
           </div>
         </div>
