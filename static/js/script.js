@@ -49,7 +49,7 @@ $(document).ready(function(){
 });
 
 
-
+// Add and edit ingredients
 
 
 $(document).ready(function () {
@@ -79,6 +79,7 @@ $(document).ready(function () {
 
 });
 
+// Add and edit method
 
 $(document).ready(function () {
 
@@ -106,9 +107,4 @@ $(document).ready(function () {
 	});
 
 });
-
-
-
-
-
 
