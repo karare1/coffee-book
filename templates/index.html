@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+<h4 class="gen-font">Create your own coffee book!</h4>
+<div class="img-back">
+    <div class="card-pannel ticks  ">
+       
+        <p><i class="fa-solid fa-check"></i>Create your account</p>
+        <p><i class="fa-solid fa-check"></i>Share your recipes with other coffee lovers</p>
+        <p><i class="fa-solid fa-check"></i>Add recipes you like to your coffee book</p>
+       
+    </div>
+  
+</div>
+
     <!-- <h2>I love coffee. It wakes you up, makes mornings bearable, and best of all, 
         tastes delicious. Is there anything it can't do?</h2>
     <p>And even better: There are a ton of coffee recipes you can make at home, 
@@ -11,7 +24,7 @@
         {{ recipe.task_name }}<br>
         {{ recipe.category_name }}<br>
         {{ recipe.recipe_name }}<br>
-        {{ recipe.intro }}<br>
+        {{ recipe.recipe_intro }}<br>
         {{ recipe.preparation_time }}<br>
         {{ recipe.difficulty }}<br>
         {{ recipe.serves }}<br>
