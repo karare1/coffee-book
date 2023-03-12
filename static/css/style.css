@@ -14,11 +14,37 @@ body {
 .img-back{
 background-image: url(../img/coffee-back.jpg);
 width:100%;
-height: 200px;
+height: 600px;
 background-position:center;
 background-size:cover;
 background-repeat: no-repeat; 
 }
+
+.fa-check {
+    margin-right: 2%;
+}
+
+.text-img {
+position: absolute;
+width: 100%;
+/* text-align: center; */
+top: 10%;
+}
+
+.ticks {
+    backdrop-filter: blur(3px) saturate(70%);
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: absolute;
+    margin:3% 2%;
+    padding: 1%;
+    /* background-color: #F6F4F1!important; */
+    color: #846C63;
+    background-color: #F0E5D7 !important;
+    /* color: white; */
+    width: 30%;
+}
+
 
   main {
     flex: 1 0 auto;
@@ -113,7 +139,7 @@ background-color: #F0E5D7;
 
 .card-link {
    font-weight: 500;
-   font-size: 1.5rem;
+   font-size: 1.2rem;
    color: #846C63!important;
 }
 
@@ -230,6 +256,14 @@ color: white;
     margin-top: 5%;
     margin-bottom: 5%
 }
+
+.find-styl {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
 
 
 /* .full-rec-name {
