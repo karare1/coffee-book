@@ -5,7 +5,7 @@
     class="waves-effect waves-light btn-small brown lighten-1 back-btn-styl back-full-rec">
     <i class="fa-solid fa-backward left"></i>Back to recipes</a> -->
 
-    
+    <div class="row full-div">
     <div class="row">
         
         <div class="col s12 m6 l6 columns"><p> <img class="img-card" src="{{ recipe.recipe_image }}"></p></div>
@@ -24,17 +24,26 @@
                 <div class="col s12 m5 l5 center-align">
                     {% if admin or session["user_record"]|lower == recipe.recipe_by|lower %} 
                     <a href="{{ url_for('edit_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Edit</a>
-                    <a href="{{ url_for('delete_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Delete</a>
+                    <a href="#mod-del" class="btn styl text-shadow modal-trigger">Delete</a>
                     {% endif %}
                 </div>
             </div>
-           
+
+        <div id="mod-del" class="modal">
+            <div class="modal-content center-align gen-font">
+            <h5 class="space-modal"><i class="fa-solid fa-trash"></i>Delete this recipe?</h5>
+            <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow space-link">Cancel</a>
+            <a href="{{ url_for('delete_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Delete</a>
+            </div>
+        </div>
+
         </div>   
     </div>
     
 <div class="row">    
     <div class="col s12 m5 l5">
         <h5 class="pad">Ingredients</h5>
+        <!-- <h1>{{recipe.ingredients}}</h1> -->
         {% for ingredient in recipe.ingredients %}
     <ul>
         <li class="ul-styl">{{ ingredient }}</li>
@@ -50,6 +59,8 @@
     {% endfor %}
         </ol>
     </div>
+</div>
+
 </div>
 
 
