@@ -235,6 +235,7 @@ padding-top: 1px;
    
 }
 
+
 .edit-btn {
    margin-right: 10%;
 }
@@ -289,6 +290,32 @@ color: white;
 .space-link {
     margin-right: 5%;
 }
+
+.gen-mar {
+    margin-right: 3%;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.gen-styl-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #88AAA9;
+}
+
+.gen-styl-link:hover {
+    color: #0d9aec;
+}
+
+.styl-nav-foot {
+    margin-bottom: 10%;
+}
+
+.add-styl {
+    margin-right: 2%;
+}
+
+
 /* .full-rec-name {
     margin: 0px;
 }
