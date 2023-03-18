@@ -1,108 +1,357 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Logo](static/img/coffee-time.png)
+# be home barista 
 
-Welcome karare1,
+<!-- ![Logo](assets/favicon/favicon-32x32.png) -->
+Whether you prefer your coffee black or with a little more milk and sugar, there are so many ways to prepare it that you can’t help but fall in love with this flavourable beverage all over again.
+Be home barista is a web application developed for coffee lovers as well as for all occasional coffee drinkes that would like to share their coffee experience and delicious recipes online.  
+It also provides a great opportunity for coffee drinkers to share their delightful local recipes with others from all around the world.
+This application makes it easy for users to create and save their coffee-recipes online, as well as search for recipes and save them in their profile (coffee book).
+Be home barista was designed with a UI/UX in mind and provides the functionalities a coffee-recipe sharing website should have. Users benefit from having convenient access to the data provided by all other app members.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+<!-- The COOL Quiz was created for anyone who wants to test their knowledge or learn some new interesting facts about the winter season. The players can take the quiz on their own or it can be used as a family indoor activity for those cold and dark evenings. The quiz has 12 multiple choice questions with a 120-second timer and a Top Score page so the players can save their best score. It hopes to engage all age groups or individuals of various interests, not just 'winter fans'.
+![Responsive Design](assets/images/responsive-img.png) -->
+<!-- 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+### User Stories 
 
-Another blue button should appear to click: _Open Browser_.
+- As a user, I would like to understand the purpose of the website and what is being tested by the quiz before I start.
+- As a user, I would like to have the option to read the instructions, so that I can understand how to play the game.
+- As a user, I would like to play the quiz and see the content clearly on any device.
+- As a user, I would like to be able to easily navigate through the website to complete the quiz.
+- As a user, I would like to see if the answer I have chosen is correct or incorrect before proceeding to the next question.
+- As a user, I would like to see my progress during the quiz (question counter, time counter and score counter).
+- As a user, I would like to see my final score, have an option to save my best score and play again.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### Implementation 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Used a layout with a winter background image, winter colours and picked an appropriate quiz title as well as a catchy initial        
+  message to give users an early sense of what the quiz is about.
+- Created a pop-up window to introduce the game to the users and to familiarize them with the quiz rules.
+- Made the quiz responsive, visible and easy to read on desktops, laptops, tablets and smartphones.
+- Created a simple intuitive design for easy navigation and used links for a smooth transport between pages.
+- Made the quiz interactive as the chosen answers will turn green if correct or red if incorrect.
+- Added Question counter, Time counter and Score counter to the game page.
+- Added a result page that displays the quiz results as well as gives an option to save the users' scores.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+## Features 
 
-## Release History
+Cool Quiz consists of four webpages that all have an intuitive design for easy navigation.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  - ### Home Page
+  This page introduces the quiz and shows important links to the game itself and to the Top Score page.
+  - ### Game Page
+  This is the core page of the quiz; it displays questions and multiple answer options as well as a navigation bar displaying the progress of the game.
+  - ### Result Page
+  It shows the results of the quiz and enables the player to save their score if they wish to do so.
+  - ### Top Score Page
+  Displays a list of top 7 scores.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Existing Features
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- __Home Page__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- The home page is the screen the end user is presented with on page load. <br>
+  All four webpages have the same winter themed background image and colours, with a silver background for the website content. The 
+  aim is to create a wintry atmosphere for players and bring back some memories of exciting winter events and activities.
+  
+- _Header_
+  - The header has the same colour design as all other pages to support the intuitiveness of the entire website. The name of the
+    quiz was chosen in order to give the visitors a hint of what the quiz is about. This intuitive layout enhances the user experience and makes the website easy to use.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- _Body_
+  - The body includes an encouraging message to challenge the visitors to click on the START button and play the game.
+  - The skeleton of the body has three buttons:
+  - ABOUT button - clicking on the ABOUT button will display a pop-up box with the game rules. It includes all information the player 
+    needs to know before starting the game.
+  - START button is placed in the middle and has a different colour to underlay its importance. Clicking on this button will redirect 
+    the player to the game page where they can start the quiz.
+  - TOP SCORE button will forward the visitors to the list of the 7 best results.
+  - Overall, the body layout is simple to understand and easy to navigate for the user.
+  
+- _Footer_
+  - Similarly to the header, the footer remains the same regardless of the webpage. It contains a name of the production company and 
+    the year of production. This intuitive layout contributes to the user experience.
+    <br><br>
+    <p align="center">
+      <img src="assets/images/home-page.png">
+    </p>
+    <br><br>
+    <p align="center">
+      <img src="assets/images/pop-up-box.png">
+    </p>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+__Game Page__
+- _Header_
+  - The header includes the navigation bar which consists of the link to the home page and three other elements to monitor the  
+    progress of the quiz. The player can click on the home icon anytime during the game to take them back to the home page and start the game again. Placing the home icon on this page allows users to navigate easily between pages and to return to the home page if they wish without having to use the back button. <br>
+    The progress elements are all dynamic and are being updated with each question asked. 
+  - Elements to monitor the progress:
+    - Question counter shows how many questions have been answered so far as well as the total number of questions.
+    - Time counter shows how many seconds are still left to complete the quiz. There is a 120 seconds countdown timer and if a player  
+      runs out of time before completing the quiz, they will be redirected back to the home page to have another go.
+    - Score counter shows how many points a player has received so far for all correctly answered questions. For each correct answer, 
+      a player will get 100 points (1200 points maximum).<br>
+    This ability to monitor the progress during the quiz enhances the user experience and also the motivation to achieve the highest score.
+ 
+- _Body_  
+  - The body shows the current question with four answer options. Clicking on one of these four options will deactivate the remaining 
+    three and reveal if the chosen option is correct or not. The player will then be forwarded to the next question. Once a player clicks on an option, it cannot be changed. This will enhance the fluidity and energy of the game and encourage players to complete the quiz on time. <br>
+    The time counter will prompt the user to answer questions correctly but also within a short period of time. This presents a double challenge and it makes the game more interesting and appealing to users. If the user does not answer all 12 questions in the allocated time, the quiz will automatically finish and they will be taken back to the home page. This will encourage users to take the quiz again. <br>
+    Furthermore, if a player answers the question incorrectly, the correct answer will not be revealed. This should make the game more attractive as it will encourage the user to try again and improve their score. Once all questions have been answered, a player will automatically be directed to the result page.
+- _Footer_ (please see the section about Footer above) 
+   <br><br>
+   <p align="center">
+     <img src="assets/images/game-page.png">
+   </p>    
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+__Result Page__
+  - It shows how many points a player has scored in the quiz and gives them an option to save their score. To do so, a player has to 
+    insert a username containing only alphabetic characters, without any numbers, special characters or spaces.
+  - If the username meets the criteria, clicking on the SAVE button will save the player's score and return the player to the home 
+    page. If the user does not want to save their score, they have an option to click on Go Home button which takes them back to the home page or on Play Again button to get to the game page and start playing again.
+    <br><br>
+    <p align="center">
+      <img src="assets/images/result-page.png">
+    </p>    
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+__Top Score Page__
+  - This page displays a list of the 7 highest scores. 
+    It also has the home icon for better navigation and it takes the user back to the home page.
+    <br><br>
+    <p align="center">
+      <img src="assets/images/score-page.png">
+    </p>    
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  - Optaining more questions from the API open database to offer users a greater variety of questions and to make the quiz more 
+    attractive
+  - I would like to incorporate difficulty levels (easy, medium, hard)
+  - Adding audio effects to a quiz question
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Wireframes 
+- [Home Desktop](assets/wireframes/Home%20Desktop.png)
+- [Home Tablet](assets/wireframes/Home%20Tablet.png)
+- [Home Mobile](assets/wireframes/Home%20Phone.png)
+- [Game Desktop](assets/wireframes/Game%20Desktop.png)
+- [Game Tablet](assets/wireframes/Game%20Tablet.png)
+- [Game Mobile](assets/wireframes/Game%20Phone.png)
+- [Result Desktop](assets/wireframes/Result%20Desktop.png)
+- [Result Tablet](assets/wireframes/Result%20Tablet.png)
+- [Result Mobile](assets/wireframes/Result%20Phone.png)
+- [Top Score Desktop](assets/wireframes/Top%20Score%20Desktop.png)
+- [Top Score Tablet](assets/wireframes/Top%20Score%20Tablet.png)  
+- [Top Score Mobile](assets/wireframes/Top%20Score%20Phone.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
+## Testing 
 
-**Why have you added this script?**
+Manual Testing of implemented features: <br><br>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+ - HOME PAGE Testing
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| ABOUT button  | Click the button | A pop-up box opens with introduction and game rules | Works as expected |
+| START button  | Click the button| Player is directed to the game page and can start playing | Works as expected |
+| TOP SCORE button | Click the button| This takes the player to the top-score page to check the leaderboard	| Works as expected |
+ 
+ <br><br>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- GAME PAGE Testing
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| HOME button  | Click the button | Take a player to the home page anytime during the game | Works as expected |
+| QUESTION counter  | Automatic feature| Shows what question the player is currently on, onwards counting | Works as expected |
+| TIMER  | Automatic feature | Starts counting down automatically when the quiz appears on the screen | Works as expected |
+| TIMER  | Automatic feature | For the last ten seconds the time text changes to red | Works as expected |
+| TIMER  | Automatic feature | When time is up before answering all questions, the player is returned to the home page | Works as expected |
+| SCORE counter | Click on the correct answer | Clicking on the correct answer will increase the score by 100 points| Works as expected |
+| SCORE counter|  Click on the incorrect answer|  Clicking on the incorrect answer will not change the score| Works as expected |
+| ANSWERS options  | Click on one of the 4 answers-options | Clicking on an option will disable the remaining three options | Works as expected |
+| ANSWERS options  | Click on one of 4 answer options | The clicked option will change to green if correct and the score will be updated | Works as expected |
+| ANSWERS options  | Click on one of 4 answer options | The clicked option will change to red if incorrect and the score will remain unchanged | Works as expected |
+| NEXT question  | Automatic feature | Clicking on an answer option will evaluate the correctness and after 2 seconds a new question will appear| Works as expected |
+| LAST question | Automatic feature | Clicking on the last answer option will evaluate the correctness and then forward the player to the result page |  Works as expected |
 
-**So….?**
+<br><br>
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- RESULT PAGE Testing
 
-**Can I opt out?**
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| RESULT  | Automatic feature | The correct score will appear on the result page | Works as expected |
+| USERNAME  | Enter name | Only text of min 3 and max 10 letters is excepted, no numbers or spaces | Works as expected |
+| SAVE button  | Click the button| Saves the players’ score and takes them back to the home page | Works as expected |
+| SAVE button  | Click the button| Input validation – do not save the score if the entered username does not meet the relevant criteria | Works as expected |
+| GO HOME button  | Click the button | Takes players back to the home page if they do not want to save the score | Works as expected |
+| PLAY AGAIN buton  | Click the button | Takes players to the game page where they can start the quiz again without saving their score | Works as expected |
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<br><br>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- TOP SCORE PAGE Testing
 
-**Anything more?**
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Saved result | click on TOP SCORE button | Correct score displayed against a correctly saved name | Works as expected |
+| 7 best scores | click on TOP SCORE button | Score appears on this page only if it is within the 7 best results | Works as expected |
+| HOME buton  | Click the button | Takes the player back to the home page | Works as expected |
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<br><br>
 
----
 
-Happy coding!
+### Validator Testing 
+
+- HTML
+  The W3C Validator has been used to validate the HTML of the website. <br>
+  All errors have been corrected. <br>
+  [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkarare1.github.io%2Fquiz-game%2F)
+
+- CSS
+  The W3C Jigsaw Validator was used to validate the CSS of the website. <br>
+  All errors have been corrected. <br>
+  [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkarare1.github.io%2Fquiz-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+- JSHint Services were used to validate Javascript <br>
+  All errors syntax errors corrected <br>
+  [script.js](assets/js-validation/js-validator-script.png) <br>
+  [game.js](assets/js-validation/js-validator-game.png) <br>
+  [result.js](assets/js-validation/js-validator-result.png) <br>
+  [topscore.js](assets/js-validation/js-validator-topscore.png) <br>
+
+
+- The WAVE Web Accessibility Evaluation Tool was used to check accessibility of the website: <br>
+  [Wave Web report](assets/images/wave-evaluation.png)
+
+- Lighthouse reports: <br><br>
+  [Lighthouse report Index](assets/lighthouse/lighthouse-report-index.png) <br>
+  [Lighthouse report Game](assets/lighthouse/lighthouse-report-game.png) <br>
+  [Lighthouse report Result](assets/lighthouse/lighthouse-report-result.png) <br>
+  [Lighthouse report Score](assets/lighthouse/lighthouse-report-score.png) <br>
+
+
+- Further testing has been done with Chrome DevTools, making sure that responsiveness works correctly on all devices.
+  After the deployment, I tested the website link focusing on the game and result page to check if all important features work as expected. No issues were detected. 
+
+- The website was assessed in various browsers: Mozilla Firefox, Google Chrome and Microsoft Edge.
+  Live link was tested on Huawei P30, Samsung A50 to test smaller screen sizes, on a small display laptop - HP ProBook 430 and also on a larger display laptop - Dell Latitude 5580. <br>
+  Each of the pages functioned well.
+
+### Fixed Bugs
+- preventDefault() removed html validation (min 4 and max 10 letters) <br>
+  I have applied an extra function in javascript to prevent submitting usernames that do not meet the criteria
+- favicon link to webmanifest showed error in console <br>
+  Resolved by adding the crossorigin attribute
+
+### Unfixed Bugs
+None I am aware of. 
+
+## Deployment
+
+Deployment To GitHub Pages:  <br>
+
+1. Create a repository in GitHub <br><br>
+  ![Deploy-1](assets/deploy/deploy-1.png) <br>
+
+2. Create the entry file for a site. GitHub Pages will look for an index.html as the entry file for the site  <br>
+
+3. Git push all contents from Integrated Development Environment (IDE) into GitHub <br>
+
+4. On GitHub page, click on the site's repository on the left sidebar or alternatively click on the avatar icon and 
+   then 'Your repositories' <br><br>
+   ![Deploy-2](assets/deploy/deploy-2.png) &nbsp; &nbsp; &nbsp; &nbsp; ![Deploy-3](assets/deploy/deploy-3.png) <br>
+
+5. In the repository, under the repository name (e.g. karare1/white-lines), click Settings  <br><br>
+  ![Deploy-4](assets/deploy/deploy-4.png) <br>
+
+6. In the "Code and automation" section on the left sidebar, click on Pages  <br><br>
+  ![Deploy-5](assets/deploy/deploy-5.PNG) <br>
+
+7. From the source section drop-down menu, select 'Deploy from a Branch'  <br>
+   From the branch section drop-down menu, select 'main' and 'root' and then click on Save button  <br><br>
+  ![Deploy-6](assets/deploy/deploy-6.PNG)  <br>
+
+8. The link to the site will be automatically created. <br>
+   To see the published site, under "GitHub Pages", click the site's URL  <br><br>
+  ![Deploy-7](assets/deploy/deploy-7.png) <br>
+
+   The live link can be found here: https://karare1.github.io/quiz-game/ <br>
+
+
+## Technologies Used 
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+Also made use of:
+- [Font Awesome](https://fontawesome.com/)
+- [favicon.io](https://favicon.io/favicon-generator/)
+- [HTML Validator](https://validator.w3.org/)
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [Javascript Validator](https://jshint.com/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
+- [Balsamiq](https://en.wikipedia.org/wiki/Balsamiq)
+
+
+## Credits 
+- [www.scrimba.com.com](https://scrimba.com/learn/learnjavascript)  <br>
+- [www.nikitahl.com.com](https://nikitahl.com/convert-array-like-collections-to-array/)  <br>
+- [www.www.classcentral.com](https://www.classcentral.com/course/youtube-build-a-quiz-app-with-html-css-and-javascript-45707/classroom) <br>
+- [www.freecodecamp.org](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)  <br>
+- [www.developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)  <br>
+- [www.w3schools](https://www.w3schools.com/)  <br>
+
+
+
+### Content 
+
+
+- The text for the Home page was taken from:  <br>
+  [www.ultimatequizquestions.com](https://www.ultimatequizquestions.com/winter-trivia-questions/)  <br>
+  [www.quiztriviagames.com](https://www.quiztriviagames.com/winter-quiz/)  <br>
+  [www.wordsforlife.org.uk](https://wordsforlife.org.uk/activities/take-a-quiz-about-winter-celebrations/)  <br>
+
+
+
+### Media
+
+- Background image:  <br>
+  [winter.jpg](https://www.pexels.com/photo/aurora-borealis-624015/)  <br>
+  Photo by Frans van Heerden downloaded from Pexels
+- Icons were taken from [Font Awesome](https://fontawesome.com/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
