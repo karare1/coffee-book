@@ -10,9 +10,51 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
 
 
 
+## Deployment
+  For this project, I have used Gitpod as the IDE and the repository has been stored on GitHub. 
+  The web application has been deployed on Heroku.
+- There are two ways how to deploy an app on Heroku: <br> 
+  a) Using Heroku command-line interface (CLI) /Heroku toolbelt
+  b) Setting up automatic deployments from GitHub
+  For this project the second option has been used:
 
+- Setting up automatic deployments from GitHub: <br>
+  1) Create an account on Heroku and once signed up click on the "Create New App" button.
+       The app name must be unique - something that nobody else currently has and without spaces.
+  2) Go to Heroku 'Settings' Tab, click 'Reveal Config Vars' ininput the following: 
+      •	key: IP | value: 0.0.0.0
+      •	key: PORT | value: 5000
+      •	key: SECRET_KEY | value: your_secret_key
+      • MONGO_URI | mongodb+srv://coffee:<password>@cluster3.jhm4r33.mongodb.net/?retryWrites=true&w=majority
+      • MONGO_DBNAME |	<database_name>
+  3) Go to Gitpod workspace and create a 'requirements.txt' file, which will install the dependencies 
+        for the project, and tell Heroku that Python language is using.
+        To create a requirements.txt file, type the following command in the terminal: <br>
+        <strong>pip3 freeze --local > requirements.txt</strong>
+        Then Add, commit and push the file into Github:
+        + git add -A or git add requirements.txt
+        + git commit -m "Add requirements.txt".
+        + git push 
+  4) Create a Procfile. The Procfile tells Heroku how to run the application.
+    To create Procfile, type the following command in the terminal: 
+     <strong>echo web: python app.py > Procfile</strong>
+     Then Add, commit and push the file into GitHub:
+     + git add -A or git add Procfile
+     + git commit -m "Add Procfile".
+     + git push 
+  5) Make sure all your code is pushed to your GitHub repository.
+     + git add -A 
+     + git commit -m "<insert your message>"
+     + git push 
+  6) Go to the Heroku Deploy Tab and click GitHub for 'Deployment Method'
+  7) Then, click 'Connect to GitHub'
+  8) Provide your Github repository name and then click Search.
+     After it found the correct repository, click on "Connect".
+  9) Click 'Enable Automatic Deploys'
+  10) Click 'Deploy Branch' on Heroku
 
-
+  My deployed app: <br>
+    https://coffee-book-project.herokuapp.com/
 
 <!-- The COOL Quiz was created for anyone who wants to test their knowledge or learn some new interesting facts about the winter season. The players can take the quiz on their own or it can be used as a family indoor activity for those cold and dark evenings. The quiz has 12 multiple choice questions with a 120-second timer and a Top Score page so the players can save their best score. It hopes to engage all age groups or individuals of various interests, not just 'winter fans'.
 ![Responsive Design](assets/images/responsive-img.png) -->
