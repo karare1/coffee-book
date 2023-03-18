@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row">
+    {% for one in categ %}
+    <div class="col s12 m4">
+      <div class="card small">
+        <div class="card-image">
+            <img src="{{ one.category_img }}" class="img-catg">
+          <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
+          <!-- <span class="card-title">Card Title</span> -->
+        </div>
+        <div class="card-content text-shadow">
+            <span class="card-title">{{ one.category_name }}</span>
+          <!-- <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p> -->
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn styl text-shadow">Edit</a>
+          <a href="#" class="btn styl text-shadow">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  {% endblock %}
