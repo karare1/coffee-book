@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<h3 class="center-align h3-styl">Add coffee category</h3>
+
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12 offset-m1" method="POST" action="{{ url_for('add_coffee_categ') }}">
+        <!-- input for a coffee category name -->
+      <div class="row">
+        <div class="input-field col s10">
+          <input id="coffee_categ_name" name="category_name" type="text" class="validate" minlength="4" maxlength="30"  required>
+          <label for="coffee_categ_name">Coffee Category Name</label>
+        </div>
+      </div>
+      <!-- input for a coffee category url -->
+      <div class="row">
+        <div class="input-field col s10">
+          <input id="coffee_categ_img" name="category_img" type="url" pattern="https://.*" class="validate">
+          <label for="coffee_categ_img">Input category image URL</label>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col s10 center-align">
+            <button class="btn-large btn styl text-shadow" type="submit"  >
+                Add Coffee Category <i class="fa-solid fa-file-circle-plus right"></i>
+            </button>
+        </div>
+    </div>
+
+    </form>
+</div>
+{% endblock %}
