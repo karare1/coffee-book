@@ -304,6 +304,23 @@ def add_coffee_categ():
     return render_template("add_coffee_categ.html")
 
 
+@app.route("/edit_coffee_categ/<Id_C>", methods=["GET", "POST"])
+def edit_coffee_categ(Id_C):
+    # submit edited dictionary and replace the old data
+    if request.method == "POST":
+        update = {
+            "category_name": request.form.get("category_name"),
+            "category_img": request.form.get("category_img")
+        }
+        mongo.db.categories.replace_one({"_id": ObjectId(Id_C)}, update)
+        # once data edited, flash message will appear
+        flash("New Coffee Category has been Updated")
+        return redirect(url_for("coffee_categ"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(Id_C)})
+    return render_template("edit_coffee_categ.html", Id_C=category)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
