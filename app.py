@@ -282,6 +282,11 @@ def delete_recipe(Id_R):
     return redirect(url_for("profile", username=session['user_record']))
 
 
+@app.route("/coffeee_categ")
+def coffee_categ():
+    categories = list(mongo.db.categories.find().sort("category_name", 1 ))
+    return render_template("coffee_categ.html", categ=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
