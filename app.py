@@ -195,7 +195,37 @@ def full_recipe(Id_R):
     return render_template("full_recipe.html", recipe=full_recipe, favourites=favourites, user=user, favourite_button_text=favourite_button_text)
 
 
+@app.route("/favourites/<Id_R>", methods=["GET", "POST"])
+def favourites(Id_R):
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(Id_R)})
+    if "user_record" in session:
+        if session["user_record"] != recipe["recipe_by"]:
+            user = mongo.db.users.find_one(
+                {"username": session["user_record"]})
+            favourites = user["favourites"]
+            print(favourites)
 
+            # Checks if recipe is already in cookbook
+            if ObjectId(Id_R) not in favourites:
+                # Adds recipe_id to user's cookbook
+                mongo.db.users.update_one({"username": session["user_record"]},
+                                            {"$push": {
+                                            "favourites": ObjectId(
+                                                    Id_R)}})
+                flash("Recipe Added to My Cookbook")
+                return redirect(url_for("full_recipe", Id_R=Id_R))
+
+            else:
+                # If recipe is already in cookbook, remove it from the cookbook
+                mongo.db.users.update_one({"username": session["user_record"]},
+                                            {"$pull": {
+                                            "favourites": ObjectId(
+                                                    Id_R)}})
+                flash("Recipe Removed")
+                return redirect((url_for("full_recipe", Id_R=Id_R)))
+
+    return redirect(url_for("full_recipe", Id_R=Id_R, favourites=favourites, user=user, recipe=recipe))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
