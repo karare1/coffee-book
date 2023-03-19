@@ -210,8 +210,7 @@ def favourites(Id_R):
             if ObjectId(Id_R) not in favourites:
                 # Adds recipe_id to user's cookbook
                 mongo.db.users.update_one({"username": session["user_record"]},
-                                            {"$push": {
-                                            "favourites": ObjectId(
+                                          {"$push": {"favourites": ObjectId(
                                                     Id_R)}})
                 flash("Recipe Added to My Cookbook")
                 return redirect(url_for("full_recipe", Id_R=Id_R))
@@ -219,8 +218,7 @@ def favourites(Id_R):
             else:
                 # If recipe is already in cookbook, remove it from the cookbook
                 mongo.db.users.update_one({"username": session["user_record"]},
-                                            {"$pull": {
-                                            "favourites": ObjectId(
+                                          {"$pull": {"favourites": ObjectId(
                                                     Id_R)}})
                 flash("Recipe Removed")
                 return redirect((url_for("full_recipe", Id_R=Id_R)))
@@ -286,6 +284,24 @@ def delete_recipe(Id_R):
 def coffee_categ():
     categories = list(mongo.db.categories.find().sort("category_name", 1 ))
     return render_template("coffee_categ.html", categ=categories)
+
+
+@app.route("/add_coffee_categ", methods=["GET", "POST"])
+def add_coffee_categ():
+    # if the function is called it will grab data from the form and
+    # instert it into the mongodb
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name"),
+            "category_img": request.form.get("category_img")
+        }
+        mongo.db.categories.insert_one(category)
+        # once inserted, it will display flash message and redirect
+        # an admin to coffee_categ page
+        flash("New Coffee Category has been Added")
+        return redirect(url_for("coffee_categ"))
+    # otherwise get method will display an empty form
+    return render_template("add_coffee_categ.html")
 
 
 if __name__ == "__main__":
