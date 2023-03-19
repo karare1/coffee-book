@@ -321,6 +321,17 @@ def edit_coffee_categ(Id_C):
     return render_template("edit_coffee_categ.html", Id_C=category)
 
 
+@app.route("/delete_coffee_categ/<Id_C>")
+def delete_coffee_categ(Id_C):
+    # call the categories collection on mongodb and remove a category with
+    # a specific id
+    mongo.db.categories.delete_one({"_id": ObjectId(Id_C)})
+    # once removed, flash message will appear
+    flash("Coffee Category has been Deleted")
+    # redirect admin back to all categories
+    return redirect(url_for("coffee_categ"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
