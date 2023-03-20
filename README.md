@@ -16,17 +16,20 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
 - There are two ways how to deploy an app on Heroku: <br> 
   a) Using Heroku command-line interface (CLI) /Heroku toolbelt
   b) Setting up automatic deployments from GitHub
-  For this project the second option has been used:
+  For this project,  the second option - Automatic Deployment - from my GitHub repository has been used:
 
 - Setting up automatic deployments from GitHub: <br>
   1) Create an account on Heroku and once signed up click on the "Create New App" button.
-       The app name must be unique - something that nobody else currently has and without spaces.
-  2) Go to Heroku 'Settings' Tab, click 'Reveal Config Vars' ininput the following: 
-      •	key: IP | value: 0.0.0.0
-      •	key: PORT | value: 5000
-      •	key: SECRET_KEY | value: your_secret_key
-      • MONGO_URI | mongodb+srv://coffee:<password>@cluster3.jhm4r33.mongodb.net/?retryWrites=true&w=majority
-      • MONGO_DBNAME |	<database_name>
+       The app name must be unique - something that nobody else currently has and without spaces (use dash or minus instead of spaces) and all lowercase letters.
+       Then select a region closest to you. 
+  2) Go to Heroku 'Settings' Tab, click 'Reveal Config Vars' and input the following variables (do not include any quotes): 
+        | **KEY** | **VALUE** | 
+        |-------------|------------|  
+        |IP  | 0.0.0.0 |
+        |PORT  | 5000 |
+        |SECRET_KEY | your_secret_key|
+        |MONGO_URI | mongodb+srv://coffee:<password>@cluster3.jhm4r33.mongodb.net/?retryWrites=true&w=majority
+        |MONGO_DBNAME |	<database_name>|
   3) Go to Gitpod workspace and create a 'requirements.txt' file, which will install the dependencies 
         for the project, and tell Heroku that Python language is using.
         To create a requirements.txt file, type the following command in the terminal: <br>
@@ -36,7 +39,7 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
         + git commit -m "Add requirements.txt".
         + git push 
   4) Create a Procfile. The Procfile tells Heroku how to run the application.
-    To create Procfile, type the following command in the terminal: 
+     To create Procfile, type the following command in the terminal: 
      <strong>echo web: python app.py > Procfile</strong>
      Then Add, commit and push the file into GitHub:
      + git add -A or git add Procfile
@@ -44,17 +47,40 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
      + git push 
   5) Make sure all your code is pushed to your GitHub repository.
      + git add -A 
-     + git commit -m "<insert your message>"
+     + git commit -m "insert your message here"
      + git push 
-  6) Go to the Heroku Deploy Tab and click GitHub for 'Deployment Method'
-  7) Then, click 'Connect to GitHub'
-  8) Provide your Github repository name and then click Search.
-     After it found the correct repository, click on "Connect".
-  9) Click 'Enable Automatic Deploys'
-  10) Click 'Deploy Branch' on Heroku
+  6) Go to the Heroku Deploy Tab and click 'GitHub (Connect to GitHub)' for 'Deployment Method'
+  7) Make sure your GitHub profile is displayed, then provide your Github repository name and then click Search.
+     Once it finds your repository, click to 'Connect' to this app.
+  8) Click 'Enable Automatic Deploys'
+  9) Choose a branch to deploy 'main' and then click 'Deploy Branch' on Heroku
+  10) You will see a message: "Your app has been succesfully deployed"
+      Click 'View' to lauch your new app.
 
   My deployed app: <br>
     https://coffee-book-project.herokuapp.com/
+  
+
+  ## Technologies Used 
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://www.python.org/)
+
+Also made use of:
+- [jQuery 3.6.3](https://jquery.com/)
+- [Materialize](https://materializecss.com/)
+- [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+- [pymongo](https://pypi.org/project/pymongo/)
+- [Font Awesome](https://fontawesome.com/)
+- [favicon.io](https://favicon.io/favicon-generator/)
+- [HTML Validator](https://validator.w3.org/)
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [Javascript Validator](https://jshint.com/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
+- [Balsamiq](https://en.wikipedia.org/wiki/Balsamiq)
+
 
 <!-- The COOL Quiz was created for anyone who wants to test their knowledge or learn some new interesting facts about the winter season. The players can take the quiz on their own or it can be used as a family indoor activity for those cold and dark evenings. The quiz has 12 multiple choice questions with a 120-second timer and a Top Score page so the players can save their best score. It hopes to engage all age groups or individuals of various interests, not just 'winter fans'.
 ![Responsive Design](assets/images/responsive-img.png) -->
