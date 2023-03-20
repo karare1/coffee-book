@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Welcome message -->
 <div class="row">
   <div class="col s12 m8 offset-m2">
     <div class="card-panel">
@@ -11,11 +12,12 @@
   </div>
 </div>
 
+<!-- Add recipe button -->
 <div class="center-align">
   <a href="{{ url_for('add_recipe') }}" class="waves-effect waves-light btn-large brown lighten-1 prof-add"><i class="fa-solid fa-file-circle-plus right"></i>Add new recipe</a>
 </div>
 
-
+<!-- Tabs for created and favourite recipes -->
 <div class="row">
   <div class="col s12">
     <ul class="tabs creat-rec ">
@@ -23,7 +25,8 @@
       <li class="tab col s6 brown-text"><a class="active" href="#favourite-recipes">Favourite Recipes</a></li>   
     </ul>
   </div>
-    
+  
+  <!-- Created recipes -->
   <div class="row" id="created-recipes">
     {% if recipes|length > 0 %}
       {% for recipe in recipes %}
@@ -54,7 +57,7 @@
    {% endif %}
 </div>
 
-
+<!-- Favourite recipes -->
 <div class="row" id="favourite-recipes">
   {% if favourites|length > 0 %}
     {% for favourite in favourites %}
