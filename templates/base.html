@@ -5,13 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coffee book for sharing coffee recipes">
+  <meta name="keywords" content="coffee, recipe, online coffee book, share, create recipes, favourite recipes, search recipes, recipe database">
+  <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/48983e326e.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
   <link rel="manifest" href="/static/favicon/site.webmanifest" crossorigin="use-credentials">
+  <!-- Materialize framework CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
+  <!-- CSS sheet -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
   {% block styles %}
   {% endblock %}
@@ -21,16 +27,17 @@
 <body>
 
   <header>
+    <!-- Navbar -->
     <nav class="nav-styl">
       <div class="nav-wrapper">
-        <a href="{{ url_for('index') }}" class="brand-logo nav-logo logo-styl">be home barista <img src="{{ url_for('static', filename='/img/coffee-time.png') }}" alt="cofee logo" class="coffee-logo brand-logo nav-logo"></a>
+        <a href="{{ url_for('index') }}" class="brand-logo nav-logo logo-styl styl-mobile "><span class="hidden-mobile styl-mobile">be home barista</span><img src="{{ url_for('static', filename='/img/coffee-time.png') }}" alt="coffee time logo" class="coffee-logo brand-logo nav-logo"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <!-- Home and Recipe pages display to all users -->
           <li><a href="{{ url_for('index') }}" class="nav-anchor">Home</a></li>
           <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
           <!-- Profile page display to a signed up user -->
-        {% if session.user_record %}
+          {% if session.user_record %}
           <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
           <!-- category page display only to an admin -->
           {% if session.user_record|lower == "admin"|lower %}
@@ -46,10 +53,10 @@
         </ul>
       </div>
     </nav>
-
+    <!-- Mobile Navbar -->
     <ul class="sidenav" id="mobile-demo">
       <li>
-        <h4 class="center-align light-brown-text text-darken 4">be home barista</h4>
+        <h4 class="center-align light-brown-text text-darken 4 gen-font">be home barista</h4>
       </li>
       <!-- Home and Recipe pages display to all users -->
       <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -87,7 +94,7 @@
     {% block content %}
     {% endblock %}
   </main>
-
+  <!-- Footer -->
   <footer class="page-footer foot-styl">
     <div class="container">
       <div class="row">
@@ -120,10 +127,12 @@
     </div>
   </footer>
 
-
+  <!-- jQuery framework -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- Materialize framework JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- JavaScript file -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   {% block scripts %}
   {% endblock %}
