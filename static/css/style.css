@@ -177,6 +177,11 @@ background-color: #F0E5D7;
     overflow: hidden;
 }
 
+.img-catg {
+    object-fit: cover;
+    height: 200px;
+}
+
 .back-full-rec {
     margin-bottom: 3%;
 }
@@ -315,6 +320,42 @@ color: white;
     margin-right: 2%;
 }
 
+
+
+
+@media (max-width: 767px) {
+    /* .hidden-mobile {
+      display: none;
+    } */
+    body {
+        width: 100%;
+        display: contents;
+        margin: 0px;
+    }
+
+    nav .brand-logo {
+        
+        left: 50%;
+        font-size:7vw;
+    }
+
+    .fa-bars {
+        color:#846C63;
+    }
+
+    .coffee-logo{
+        margin-left: 70%;
+    }
+
+    .ticks {
+        width: 92%; 
+        left: 1.5%;
+        top: 13.3%;
+        font-size: 4vw;
+        padding-left: 2%;
+       
+    }
+  }
 
 /* .full-rec-name {
     margin: 0px;
