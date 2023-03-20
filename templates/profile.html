@@ -3,54 +3,83 @@
 
 <div class="row">
   <div class="col s12 m8 offset-m2">
-      <div class="card-panel">
-          <h3 class="center-align prof-styl z-depth-2 brown lighten-5">
-              Hello, {{ username }}
-          </h3>
-      </div>
+    <div class="card-panel">
+      <h4 class="center-align prof-styl z-depth-2 brown lighten-5">
+          Hello, {{ username }}
+      </h4>
+    </div>
   </div>
 </div>
+
 <div class="center-align">
-<a href="{{ url_for('add_recipe') }}" class="waves-effect waves-light btn-large brown lighten-1 "><i class="fa-solid fa-file-circle-plus right"></i>Add new recipe</a>
+  <a href="{{ url_for('add_recipe') }}" class="waves-effect waves-light btn-large brown lighten-1 prof-add"><i class="fa-solid fa-file-circle-plus right"></i>Add new recipe</a>
 </div>
 
 
 <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s6"><a href="#created-recipes">Created Recipes</a></li>
-        <li class="tab col s6"><a class="active" href="#test2">Test 2</a></li>   
+  <div class="col s12">
+    <ul class="tabs creat-rec ">
+      <li class="tab col s6 brown-text raw"><a href="#created-recipes">Created Recipes</a></li>
+      <li class="tab col s6 brown-text"><a class="active" href="#favourite-recipes">Favourite Recipes</a></li>   
     </ul>
-</div>
+  </div>
     
-
-<!-- <div id="created-recipes">
-<div class="center-align">
-    <a href="{{ url_for('add_recipe') }}" class="add-btn waves-effect waves-light btn-large brown lighten-1 "><i class="fa-solid fa-file-circle-plus right"></i>Add new recipe</a>
-</div> -->
-
-<div class="row">
-    {% for recipe in recipes %}
-    <div class="col s12 m6 l4">
-      <div class="card">
-        <div class="card-image">
-          <img class="" src="{{ recipe.recipe_image }}">
-          <!-- <span class="card-title">{{ recipe.recipe_name }}</span> -->
-        </div>
-        <div class="center-align card-content">
-          <h6 class="card-title" >{{ recipe.recipe_name }}</h6>
-          <p>{{ recipe.recipe_intro }}</p>
-        </div>
-        <div class="card-action div-card-link">
-          <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="card-link" aria-label="Link to full recipe">
-            <span class="link"></span>Full Recipe</a>
+  <div class="row" id="created-recipes">
+    {% if recipes|length > 0 %}
+      {% for recipe in recipes %}
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            {% if recipe.recipe_image %}
+             <img src="{{ recipe.recipe_image }}">
+            {% else %}
+              <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg">
+            {% endif %}
+          </div>
+          <div class="center-align card-content">
+            <h6 class="card-title" >{{ recipe.recipe_name }}</h6>
+            <p>{{ recipe.recipe_intro }}</p>
+          </div>
+          <div class="card-action div-card-link">
+            <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="card-link" aria-label="Link to full recipe">
+            <span class="link"></span>Discover Recipe</a>
+          </div>
         </div>
       </div>
+     {% endfor %}
+   {% else %}
+    <div class="center-align gen-font">
+      <h5>No recipes created, please add a recipe and share with others.</h5>
     </div>
+   {% endif %}
+</div>
+
+
+<div class="row" id="favourite-recipes">
+  {% if favourites|length > 0 %}
+    {% for favourite in favourites %}
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ favourite.recipe_image }}">
+          </div>
+          <div class="center-align card-content">
+            <h6 class="card-title">{{ favourite.recipe_name }}</h6>
+            <p>{{ favourite.recipe_intro }}</p>
+          </div>
+          <div class="card-action div-card-link">
+            <a href="{{ url_for('full_recipe', Id_R=favourite._id) }}" class="card-link" aria-label="Link to full recipe">
+            <span class="link"></span>Discover Recipe</a>
+          </div>
+        </div>
+      </div>
     {% endfor %}
+  {% else %}
+    <div class="center-align gen-font">
+      <h5>No recipes saved, please add your favourite recipe.</h5>
+    </div>
+  {% endif %}
+  </div>
 </div>
-</div>
-
-
 
 {% endblock %}
