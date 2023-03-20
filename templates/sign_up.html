@@ -5,7 +5,7 @@
 
 <div class="row">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
-
+      <!-- Username input -->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-user prefix"></i>
@@ -13,7 +13,7 @@
           <label for="username">Username</label>
         </div>
       </div>
-    
+      <!-- Email address input -->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-envelope-open-text prefix"></i>
@@ -21,7 +21,7 @@
           <label for="email">Email</label>
         </div>
       </div>
-     
+     <!-- Password input -->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-key prefix"></i>
@@ -29,28 +29,16 @@
           <label for="password">Password</label>
         </div>
       </div>
-
-      <!-- <div class="row">
-        <div class="input-field col s12">
-          <i class="fa-solid fa-lock prefix"></i>
-          <input id="confirm_password" name="confirm_password" type="password" class="validate">
-          <label for="confirm_password">Confirm password</label>
-        </div>
-      </div> -->
-
+      <!-- Sign Up button -->
       <div class="center-align">
-      <button class="btn waves-effect waves-light btn-large col s12 btn-styl" type="submit" name="action">Submit
-        <!-- <i class="material-icons right">send</i> -->
-      </button>
+        <button class="btn waves-effect waves-light btn-large col s12 btn-styl" type="submit" name="action">Submit
+        </button>
       </div>
-
     </form>
-
   </div>
 
   <div class="center-align">
     <p>Already Signed Up? <a href="{{ url_for('log_in') }}" class="p-sign-styl">Log In</a></p> 
   </div>
-
 
 {% endblock %}
