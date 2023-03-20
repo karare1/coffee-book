@@ -5,7 +5,7 @@
 
 <div class="row">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('log_in') }}">
-
+<!-- Username -->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-user prefix"></i>
@@ -13,7 +13,7 @@
           <label for="username">Username</label>
         </div>
       </div>
-     
+<!-- Password -->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-key prefix"></i>
@@ -21,19 +21,16 @@
           <label for="password">Password</label>
         </div>
       </div>
-
+<!-- Log In button -->
       <div class="center-align">
       <button class="btn waves-effect waves-light btn-large col s12 btn-styl" type="submit" name="action">Log In
       </button>
       </div>
-
     </form>
-
   </div>
-  
+<!-- Navigate a user to Sign Up if not already  -->
   <div class="center-align">
     <p>Don't have an account? <a href="{{ url_for('sign_up') }}" class="p-sign-styl">Sign Up</a></p> 
   </div>
-
 
 {% endblock %}
