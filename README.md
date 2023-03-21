@@ -13,29 +13,55 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
 
 ### User Stories 
 
-- As a user, I would like to understand the purpose of this application and what the application offers.
-- As a user, I would like to see the recipes even if I do not sign up.
-- As a user, I would like to use the app and see the content clearly on any device.
-- As a user, I would like to be able to easily navigate through the website to complete the quiz.
-- As a user, I would like to see if the answer I have chosen is correct or incorrect before proceeding to the next question.
-- As a user, I would like to see my progress during the quiz (question counter, time counter and score counter).
-- As a user, I would like to see my final score, have an option to save my best score and play again.
+New User / non-signed up
+- As a user, I would like to understand the purpose of the website and what the website offers.
+- As a user, I would like to use the website and see the content clearly on any device.
+- As a user, I would like to be able to easily navigate through the website.
+- As a user, I would like to search for recipes in the website.
+- As a user, I would like to explore all recipes shared on the website.
+- As a user, I would like to see a full recipe version without having to sign up.
+- As a user, I would like to have the option to sign up and create my own coffee book.
+- As a user, I would like to navigate intuitively and spot the Sign-Up button and all other important links right away.
+- As s user, I would like to find contact details in case I need to aproach the website creator.
+
+Returning User
+- As a user, I would like to easily spot a Log In button. 
+- As a user, I would like to easily navigate to profile and other pages available to me.
+- As a user, I would like to be able to create and share my recipes with other users.
+- As a user, I would like to edit recipes I have created.
+- As a user, I would like to delete recipes I have created.
+- As a user, I would like to save recipes to my profile.
+- As a user, I would like to have an option to remove a recipe from my coffee book.
+
+Admin
+- As an admin, I would like to edit existing recipes created by any user.
+- As an admin, I would like to delete existing recipes created by any user.
+- As an admin, I would like to remove any inappropriate or other offensive content shared in a user recipe.
+- As an admin, I would like to have an option to create, edit or delete a category.
 
 
-## User Experience (UX)
+### Implementation 
 
-### User Stories 
+- Used a layout with a coffee background image and coffee theme colours as well as an initial message to give users an 
+  early sense of what the website is about.
+- Made the website responsive, visible and easy to read on desktops, laptops, tablets and smartphones.
+- The website 
+- Implement a search window for a user to find a recipe based on name, ingredients and recipe intro.
+- For signed-up users a profile page has been created with two tabs - for the recipes they created themselves and recipes 
+  they added to their favourites.
+- If a user created/added a recipe two extra buttons appear in a full recipe pafe for them to edit or delete their
+  recipes if they wish.
+- Signed-up users are also provided with an extra Add/remove favourites button in full recipes for those recipes that
+  have been created by other users in order to give a signed-up users an option to add these recipies into their coffee book. 
+- User can find an email address on footer in case they want to contact admin.
+- The same layout and navigation bar/footer are used throughout the whole website for effective manipulation.
+- Sign Up and Log In buttons are easy to spot and Sign Up process is very simple.
+- Addition and editing recipies are very siple as well, when editing a recipe all fields are populated with your original
+  input so it is easy to make changes. 
+- Even for users that do not intend to sign up, this website could be helpful and informative.
 
-- As a user, I would like to understand the purpose of the website and what is being tested by the quiz before I start.
-- As a user, I would like to have the option to read the instructions, so that I can understand how to play the game.
-- As a user, I would like to play the quiz and see the content clearly on any device.
-- As a user, I would like to be able to easily navigate through the website to complete the quiz.
-- As a user, I would like to see if the answer I have chosen is correct or incorrect before proceeding to the next question.
-- As a user, I would like to see my progress during the quiz (question counter, time counter and score counter).
-- As a user, I would like to see my final score, have an option to save my best score and play again.
 
-
-intuitive/first-time learning and effective
+<!-- intuitive/first-time learning and effective
 In order to promote that form of ease-of-use and intuition
 it's always better to present your functionality to a user in
 the most intuitive way possible that promotes a positive user experience
@@ -51,7 +77,7 @@ and "check_password_hash".
 Hashing passwords essentially means that we're converting the user's password into another
 string, which is one-way, and practically impossible to reverse.
 To include additional security, it will then salt that string with random data, making
-it even tougher to crack.
+it even tougher to crack. -->
 
 
 ### Existing Features
@@ -59,7 +85,7 @@ it even tougher to crack.
 - __Home Page__
 
 - The home page is the screen the end user is presented with on page load. <br>
-  All webpages have the same gray-colour background with white navigation bar and pale brown footer. Two colors have been used for fonts: brown and pale blue. All project is using warm brownish feeling to evoke the smell of coffee.
+  All webpages have the same gray-colour background with white navigation bar and pale brown footer. Two colors have been used for fonts: brown and pale blue. All project is using warm brownish (coffee) design to match the purpose of the website.
 
   Base.html template has been used as a parent template, that includes the basic html structure with all important links for frameworks and libraries needed for the website to function properly. 
   The parent template also includes navbar and footer that are the same on all webpages. This support the intuitiveness of the entire website and enhances the user experience and makes the website easy to use.
@@ -69,13 +95,38 @@ it even tougher to crack.
   The main purposure of this website is to share coffee recipies but italso gives sign-up users the opportunity to create their own online coffee book - and save the recepis they like. 
   Overall the Home page has been created to give a pleasant first impression and prompt a new visitors to click on sign up button and contribute with thier coffee recipes.
 
+- __Recipe Page__
+
+- In the Recipe page a user will find all recipes shared by other users or themselves. They also have the opportunity
+  to search for a recipe if they are looking for a particular recipe or ingredients. 
+  The website mostly consists of recipe cards with an image and a brief recipe description (recipe intro).
+  If any of the shared recipes catches a users's attention, they can click on discover recipes button at the bottom of the recipe card and open the full recipe.
+  Full recipe page includes all details and instructions necessary for a coffee drink preparation, such as
+  recipe name, recipe brief descriprion, preparation time and serving information as well as difficulty, and two most important sections - ingredients and method.
+  It also shows creator username, category and an recipe image. 
+  Overall the full-recipe is divided into 4 sections for bettter readability and user experience. In ingredients section, every single ingredient is underlined and every step in method section in numbered.
+  Preparation time, difficulty and serves also have Icon prefixes for a better UX snd layout.
 
 
+ __Sign Up / Log In Page__
+- Signing Up to the website is very simple and straightforward. The aim was to keep it as simple as possible for users
+  not to get discouraged by tedious process of filling in a lot of fields.
+  Sign Up form include Icon Prefixes for a better user experience and layout.
+  All three fields: username, email and password need to be input in order to sign up.
+  There are some restrictions when creating a username and password; username needs to have a minimum of 5 and maximum of 12 characters - all alphanumeric without spaces. Password needs to be at least 8 characters long and maximum of 20 - all alphanumeric and without spaces. 
+  If a user input correct details into a sign up form and the inputed username does not already exists, they will be provided with a flash message informing them they have been succesfully signed up. Otherwise they will get a message asking them to fill in the form again. 
+  All three fields have validation applied so if username, password or email do not meet criteria for signing up, red underline will appear. Green underline will indicate that all fielda have been filled correctly and the form is ready for submission. 
+  Werkzeug "generate_password_hash" and "check_password_hash" method has been used for converting a user's password. 
+
+  Log In Page includes two input fiels that need to be filled in by a registered user in order to Log-In.
+  Again, both have validation applied and will indicate if the criteria for log-in have been met. If correct username and password have been used and they match the details on mongodb the user will be provided with a flash message that they have been logged in, otherwise the will prompt the user to input the correct log-in details. 
+
+ __Profile Page__
+
+ 
 
 
-
-
-- _Body_
+<!-- - _Body_
   - The body includes an encouraging message to challenge the visitors to click on the START button and play the game.
   - The skeleton of the body has three buttons:
   - ABOUT button - clicking on the ABOUT button will display a pop-up box with the game rules. It includes all information the player 
@@ -84,7 +135,7 @@ it even tougher to crack.
     the player to the game page where they can start the quiz.
   - TOP SCORE button will forward the visitors to the list of the 7 best results.
   - Overall, the body layout is simple to understand and easy to navigate for the user.
-  
+   -->
 
 
 
