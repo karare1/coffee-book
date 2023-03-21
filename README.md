@@ -9,6 +9,127 @@ This application makes it easy for users to create and save their coffee-recipes
 Be home barista was designed with a UI/UX in mind and provides the functionalities a coffee-recipe sharing website should have. Users benefit from having convenient access to the data provided by all other app members.
 
 
+## User Experience (UX)
+
+### User Stories 
+
+- As a user, I would like to understand the purpose of this application and what the application offers.
+- As a user, I would like to see the recipes even if I do not sign up.
+- As a user, I would like to use the app and see the content clearly on any device.
+- As a user, I would like to be able to easily navigate through the website to complete the quiz.
+- As a user, I would like to see if the answer I have chosen is correct or incorrect before proceeding to the next question.
+- As a user, I would like to see my progress during the quiz (question counter, time counter and score counter).
+- As a user, I would like to see my final score, have an option to save my best score and play again.
+
+
+## User Experience (UX)
+
+### User Stories 
+
+- As a user, I would like to understand the purpose of the website and what is being tested by the quiz before I start.
+- As a user, I would like to have the option to read the instructions, so that I can understand how to play the game.
+- As a user, I would like to play the quiz and see the content clearly on any device.
+- As a user, I would like to be able to easily navigate through the website to complete the quiz.
+- As a user, I would like to see if the answer I have chosen is correct or incorrect before proceeding to the next question.
+- As a user, I would like to see my progress during the quiz (question counter, time counter and score counter).
+- As a user, I would like to see my final score, have an option to save my best score and play again.
+
+
+intuitive/first-time learning and effective
+In order to promote that form of ease-of-use and intuition
+it's always better to present your functionality to a user in
+the most intuitive way possible that promotes a positive user experience
+
+Sign up 
+Log In
+let's include some Icon Prefixes for a better user experience
+and layout.
+
+Werkzeug
+The two main helpers we're going to use for this mini-project, are "generate_password_hash",
+and "check_password_hash".
+Hashing passwords essentially means that we're converting the user's password into another
+string, which is one-way, and practically impossible to reverse.
+To include additional security, it will then salt that string with random data, making
+it even tougher to crack.
+
+
+### Existing Features
+
+- __Home Page__
+
+- The home page is the screen the end user is presented with on page load. <br>
+  All webpages have the same gray-colour background with white navigation bar and pale brown footer. Two colors have been used for fonts: brown and pale blue. All project is using warm brownish feeling to evoke the smell of coffee.
+
+  Base.html template has been used as a parent template, that includes the basic html structure with all important links for frameworks and libraries needed for the website to function properly. 
+  The parent template also includes navbar and footer that are the same on all webpages. This support the intuitiveness of the entire website and enhances the user experience and makes the website easy to use.
+  
+  Home Page includes a theme picture that fits the overall layout of the website. This coffee image has been used to attract potential users and give them a hint on what the website is about. The aim is also make the website useful and intersting for the users that are already signed up to come back and share their new delicious recipes. 
+  The home page also has a message attached to the background image that says why a potential user should sign up and what advantage they get. 
+  The main purposure of this website is to share coffee recipies but italso gives sign-up users the opportunity to create their own online coffee book - and save the recepis they like. 
+  Overall the Home page has been created to give a pleasant first impression and prompt a new visitors to click on sign up button and contribute with thier coffee recipes.
+
+
+
+
+
+
+
+- _Body_
+  - The body includes an encouraging message to challenge the visitors to click on the START button and play the game.
+  - The skeleton of the body has three buttons:
+  - ABOUT button - clicking on the ABOUT button will display a pop-up box with the game rules. It includes all information the player 
+    needs to know before starting the game.
+  - START button is placed in the middle and has a different colour to underlay its importance. Clicking on this button will redirect 
+    the player to the game page where they can start the quiz.
+  - TOP SCORE button will forward the visitors to the list of the 7 best results.
+  - Overall, the body layout is simple to understand and easy to navigate for the user.
+  
+
+
+
+### Wireframes 
+- [Home Desktop](static/wireframes/Home_Desktop.png)
+- [Home Tablet](static/wireframes/Home_Laptop.png)
+- [Home Mobile](static/wireframes/Home_Mobile.png)
+- [Recipes Desktop](static/wireframes/Recipes_Desktop.png)
+- [Recipes Laptop](static/wireframes/Recipes_Laptop.png)
+- [Recipes Mobile](static/wireframes/Recipes_Mobile.png)
+- [Sign Up Desktop](static/wireframes/Sign_Up_Desktop.png)
+- [Sign Up Laptop](static/wireframes/Sign_Up_Laptop.png)
+- [Sign Up Mobile](static/wireframes/Sign_Up_Mobile.png)
+- [Log In Desktop](static/wireframes/Log_In_Desktop.png)
+- [Log In Laptop](static/wireframes/Log_In_Laptop.png)
+- [Log In Mobile](static/wireframes/Log_In_Mobile.png)
+- [Profile Desktop](static/wireframes/Profile_Desktop.png)
+- [Profile Laptop](static/wireframes/Profile_Laptop.png)
+- [Profile Mobile](static/wireframes/Profile_Mobile.png)
+- [Add Recipe Desktop](static/wireframes/Add_Recipe_Desktop.png)
+- [Add Recipe Laptop](static/wireframes/Add_Recipe_Laptop.png)
+- [Add Recipe Mobile](static/wireframes/Add_Recipe_Mobile.png)
+- [Edit Recipe Desktop](static/wireframes/Edit_Recipe_Desktop.png)
+- [Edit Recipe Laptop](static/wireframes/Edit_Recipe_Laptop.png)
+- [Edit Recipe Mobile](static/wireframes/Edit_Recipe_Mobile.png)
+- [Full Recipe Desktop](static/wireframes/Full_Recipe_Desktop.png)
+- [Full Recipe Laptop](static/wireframes/Full_Recipe_Laptop.png)
+- [Full Recipe Mobile](static/wireframes/Full_Recipe_Mobile.png)
+- [Categories Desktop](static/wireframes/Categories_Desktop.png)
+- [Categories Laptop](static/wireframes/Categories_Laptop.png)
+- [Categories Mobile](static/wireframes/Categories_Mobile.png)
+- [Add Category Desktop](static/wireframes/Add_Category_Desktop.png)
+- [Add Category Laptop](static/wireframes/Add_Category_Laptop.png)
+- [Add Category Mobile](static/wireframes/Add_Category_Mobile.png)
+- [Edit Category Desktop](static/wireframes/Edit_Category_Desktop.png)
+- [Edit Category Laptop](static/wireframes/Edit_Category_Laptop.png)
+- [Edit Category Mobile](static/wireframes/Edit_Category_Mobile.png)
+
+
+
+
+
+
+
+
 
 ## Deployment
   For this project, I have used Gitpod as the IDE and the repository has been stored on GitHub. 
@@ -69,9 +190,14 @@ Be home barista was designed with a UI/UX in mind and provides the functionaliti
 
 Also made use of:
 - [jQuery 3.6.3](https://jquery.com/)
-- [Materialize](https://materializecss.com/)
+- [Materialize CSS](https://materializecss.com/) responsive front-end framework
 - [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 - [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.2.x/)
+Flask uses Werkzeug to handle various utilities for WSGI applications, providing more structure
+and patterns for defining powerful apps.
+One of the benefits of using Werkzeug with Flask, is that it comes with simple-to-use
+Security features.
 - [pymongo](https://pypi.org/project/pymongo/)
 - [Font Awesome](https://fontawesome.com/)
 - [favicon.io](https://favicon.io/favicon-generator/)
