@@ -5,11 +5,11 @@
 
 <div class="row">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
-      <!-- Username input -->
+      <!-- Username input + regular expression applied-->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-user prefix"></i>
-          <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <input id="username" name="username" type="text" minlength="5" maxlength="12" pattern="^[a-zA-Z0-9]{5,12}$" class="validate" required>
           <label for="username">Username</label>
         </div>
       </div>
@@ -21,11 +21,11 @@
           <label for="email">Email</label>
         </div>
       </div>
-     <!-- Password input -->
+     <!-- Password input + regular expression applied-->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-key prefix"></i>
-          <input id="password" name="password" type="password" minlength="8" maxlength="20" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <input id="password" name="password" type="password" minlength="8" maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
@@ -36,7 +36,7 @@
       </div>
     </form>
   </div>
-
+<!-- Navigate a user to Log In if already Signed Up  -->
   <div class="center-align">
     <p>Already Signed Up? <a href="{{ url_for('log_in') }}" class="p-sign-styl">Log In</a></p> 
   </div>
