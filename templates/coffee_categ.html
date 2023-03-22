@@ -1,25 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="center-align gen-font">
+  <h4>Coffee Categories</h4>
+</div>
 
+<div class="center-align">
+  <a href="{{ url_for('add_coffee_categ') }}" class="waves-effect waves-light btn brown lighten-1 text-shadow more-space3"><i class="fa-solid fa-file-circle-plus right"></i>Add new coffee category</a>
+</div>
+  
 <div class="row">
-    {% for one in categ %}
+    {% for category in categ %}
     <div class="col s12 m4">
       <div class="card small">
         <div class="card-image">
-            <img src="{{ one.category_img }}" class="img-catg">
+            <img src="{{ category.category_img }}" class="img-catg" alt="Various coffee images ot images with coffee theme">
           <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
           <!-- <span class="card-title">Card Title</span> -->
         </div>
         <div class="card-content text-shadow">
-            <span class="card-title">{{ one.category_name }}</span>
+            <span class="card-title">{{ category.category_name }}</span>
           <!-- <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p> -->
         </div>
         <div class="card-action">
-          <a href="#" class="btn styl text-shadow">Edit</a>
-          <a href="#" class="btn styl text-shadow">Delete</a>
+          <!-- calling edit_coffee_categ function and passing through Id_R variable -->
+          <a href="{{ url_for('edit_coffee_categ', Id_C=category._id) }}" class="btn styl text-shadow">Edit</a>
+          <a href="#modal-{{ category._id }}" class="btn styl text-shadow modal-trigger">Delete</a>
         </div>
+
+        <div id="modal-{{ category._id }}" class="modal">
+          <div class="modal-content center-align gen-font">
+          <h5 class="space-modal"><i class="fa-solid fa-trash"></i>Delete this category?</h5>
+          <a href="{{ url_for('coffee_categ') }}" class="btn styl text-shadow space-link">Cancel</a>
+          <a href="{{ url_for('delete_coffee_categ', Id_C=category._id) }}" class="btn styl text-shadow">Delete</a>
+          </div>
+      </div>
+
+ <!-- Modal Trigger
+ <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+ Modal Structure -->
+ <!-- <div id="modal1" class="modal">
+   <div class="modal-content">
+     <h4>Modal Header</h4>
+     <p>A bunch of text</p>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+   </div>
+ </div> -->
+         
       </div>
     </div>
     {% endfor %}
