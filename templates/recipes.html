@@ -25,7 +25,7 @@
 
     <div class="row find-styl">
       <form action="{{ url_for('find') }}" method="post" class="col s12">
-          <div class="row valign-wrapper center-align">
+          <div class="row valign-wrapper center-align block-search ">
               <div class="input-field col s12 m8">
                   <i class="fas fa-search prefix gen-font"></i>
                   <input type="text" name="question" id="question" minlength="3" class="validate" required>
@@ -47,7 +47,16 @@
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
-              <img class="" src="{{ recipe.recipe_image }}">
+              {% if recipe.recipe_image %}
+              <img src="{{ recipe.recipe_image }}" alt="Various coffee images ot images with coffee theme.">
+              <!--If recipe has an image then displayed-->
+              <!-- If recipe doesn't have an image use alternative -->
+              {% else %}
+              <!-- <img src='../../static/img/coffee-beans.jpg'> -->
+              <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
+              <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg" alt="Image of coffee beans">,
+              <!-- <img src="{{ url_for('static', filename='/img/noimage1.png') }}"> -->
+              {% endif %}
               <!-- <span class="card-title">{{ recipe.recipe_name }}</span> -->
             </div>
             <div class="center-align card-content">
