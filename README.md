@@ -151,6 +151,29 @@ Manual Testing of implemented features: <br><br>
 | SIGN UP button|Click on Sign Up button|It will redirect a user to a Sign Up page | Works as expected |
  <br><br>
 
+
+- SIGN UP Page Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| USERNAME  | Input a username | Username needs to have min. 5 and max.20 characters, no spaces and must be unique, if the same username alredy exists, a flash message will prompt the user to create another username. It is a required field, validation and pattern applied | Works as expected |
+| EMAIL ADDRESS | Input an email address | It is required, validation and email pattern applied | Works as expected |
+| PASSWORD | Input a password | Password needs to have min. 8 and max.20 characters, no spaces. It is a required field, validation and pattern applied | Works as expected |
+| SUBMIT button| Click on Submit button| If all input fields are filled in correctly, a flash message will appear to confirm the registration and a user will be redirected to their profile page, otherwise they will be prompted to complete a form again.| Works as expected |
+| LOG IN link | Click on the link| If a user is already registered, they will click on Log in link to get to the Log in page  | Works as expected |
+ <br><br>
+
+
+- LOG IN  Page Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| USERNAME / PASSWORD | Input username / password | A user needs to input their username and password that meet all requirements  | Works as expected |
+| LOG IN button| Click on Log In button| If both username and password are correct, a flash message will confirm that they are logged and will be redirected to their profile page. Otherwise, a flash message will prompt a user to input the correct details | Works as expected |
+| SIGN UP link | Click on the link| If a user is not registered yet, they will click on the Sign Up link to get to the Sign Up page   | Works as expected |
+ <br><br>
+
+
 - RECIPE PAGE Testing
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
@@ -171,7 +194,7 @@ Manual Testing of implemented features: <br><br>
 | EDIT (recipe) button | Click on Edit button | It will populate the edit recipe form with the original input | Works as expected |
 | DELETE (recipe) button | Click on Delete button | It will display a message for a user to confirm they wish to delete a recipe  | Works as expected |
 |CANCEL (confirmation) button | Click on Cancel button | It will redirect a user back to a full recipe  | Works as expected |
-|DELETE (confirmation) button | Click on Delete button | It will delete a recipe and redirect a user back to full recipe | Works as expected |
+|DELETE (confirmation) button | Click on Delete button | It will delete a recipe (flash message) and redirect a user back to full recipe | Works as expected |
 | ADD TO FAVOURITES button | Click on Add to favourites button | It will sent a copy of the recipe into a user's profile, button will change to 'Remove from favourites' | Works as expected |
 | REMOVE FROM FAVOURITES button | Click on Remove from favourites button | It will remove a recipe from user's profile and button will change back to 'Add to favourites' | Works as expected |
 <br><br>
@@ -180,35 +203,68 @@ Manual Testing of implemented features: <br><br>
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| RECIPE NAME  | Input text into the Search bar | Validation applied; minlength 3 characters, if no input or less then 3 characters - red undelined | Works as expected |
-| CANCEL (Search) button | Click on Cancel button| It will remove all input from the Search bar and revert the bar into the initial position | Works as expected |
-| FIND (Search) button  | Input text into Search bar and click on Find button | Input a key word from recipe name, intro or ingredients and it will find the affected recipes | Works as expected |
-| DISCOVER RECIPE button | Click on Discover Recipe button | It will open a full recipe | Works as expected |
+| ADD NEW RECIPE button  | Click on Add new recipe | It is in profile page and available only for registered users and redirect a user to 'Add a new recipe' form | Works as expected |
+| RECIPE NAME  | Input text into recipe name field | Validation applied; min.5 and max.40 characters, if no input or less then 5 characters - red undelined; it will not let a user to input more then 40 characters | Works as expected |
+| RECIPE IMAGE URL  | Input url into the Recipe Image Url | It is optional to add Image URL, if not provided, alternative image will display | Works as expected |
+| RECIPE INTRODUCTION | Input text into the Recipe Introduction | This field is required, validation applied; min. 5 max.125 characters| Works as expected |
+| CATEGORY | Dropdown selection | This field is required, validation applied| Works as expected |
+| DIFFICULTY | Dropdown selection | This field is required, validation applied| Works as expected |
+| PREPARATION TIME | Input text into Preparation Time | It is required, validation applied, max.15 characters | Works as expected |
+| SERVES | Pick a number from options | It is required, validation applied, min.1 max.30 | Works as expected |
+| INGREDIENTS | Input text into Ingredients | It is required to input at least one line, validation applied, min.5 max.200 characters; max.20 inputs allowed | Works as expected |
+| METHOD | Input text into Method | It is required to input at least one line, validation applied, min.5 max.750 charcters; max.20 inputs allowed | Works as expected |
+| ADD RECIPE button  | Click on Add recipe | It will display a flash message that recipe has been successfully added, it will be automatically shared with others in recipes page and also will appear in user's 'created recipes' tab | Works as expected |
+<br><br>
 
 
-
-- RESULT PAGE Testing
+- EDIT RECIPE PAGE Testing
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| RESULT  | Automatic feature | The correct score will appear on the result page | Works as expected |
-| USERNAME  | Enter name | Only text of min 3 and max 10 letters is excepted, no numbers or spaces | Works as expected |
-| SAVE button  | Click the button| Saves the players’ score and takes them back to the home page | Works as expected |
-| SAVE button  | Click the button| Input validation – do not save the score if the entered username does not meet the relevant criteria | Works as expected |
-| GO HOME button  | Click the button | Takes players back to the home page if they do not want to save the score | Works as expected |
-| PLAY AGAIN buton  | Click the button | Takes players to the game page where they can start the quiz again without saving their score | Works as expected |
-
+| CANCEL button  | Click on cancel button | Once in 'Edit recipe form', if a user does not want to submit any changes, clicking on Cancel button they will be redirected to their profile page  | Works as expected |
+| EDIT YOUR RECIPE button  | Click on 'Edit your recipe' button | Clicking on the button, changes will be stored and an updated recipe version will be displayed in recipes page as well as in user's profile. | Works as expected |
+<br><br>
+All original content has been checked - if retrieved properly - works as expected
+<br>
+All input fields validation and requirements - works as expected 
 <br><br>
 
-- TOP SCORE PAGE Testing
+- PROFILE PAGE Testing
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Saved result | click on TOP SCORE button | Correct score displayed against a correctly saved name | Works as expected |
-| 7 best scores | click on TOP SCORE button | Score appears on this page only if it is within the 7 best results | Works as expected |
-| HOME buton  | Click the button | Takes the player back to the home page | Works as expected |
-
+| GREETING | automatic feature | Once logged in a user will see a flash message and a personalized greeting | Works as expected |
+| TABS (CREATED/FAVOURITE RECIPES)  | click on the tabs | Clicking on 'created recipes' tab, all recipes created by the user will be displayed; clicking on 'favourite recipes' tab all saved favourite recipes will be displayed. If no recipies created or saved, message will appear to prompt the user to create or saved recipes | Works as expected |
+| ADD NEW RECIPE button  | Click on Add new recipe | It will redirect a user to 'Add a new recipe' form | Works as expected |
 <br><br>
+
+- COFFEE CATEGORY / ADD COFFEE CATEGORY / EDIT COFFEE CATEGORY PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| ADD NEW COFFEE CATEGORY button | click on the button | Only admin has access to Coffee Category page. Clicking on the button will redirect an admin to 'Add coffee category' form | Works as expected |
+| EDIT (CATEGORY) button  | click on the button |  It will populate 'edit coffee category' form with the original input| Works as expected |
+| DELETE (CATEGORY) BUTTON  | Click on the button | It will display a message for an admin to confirm they wish to delete a recipe  | Works as expected |
+|DELETE (confirmation) button | Click on the button | It will delete a category (flash message) and redirect an admin back to coffee category page| Works as expected |
+| CATEGORY NAME  | Input text into category name field | Validation applied; min.4 and max.30 characters, if no input or less then 4 characters - red undelined; it will not let an admin to input more then 30 characters | Works as expected |
+| CATEGORY IMAGE URL  | Input url into the Category Image Url | It is optional to add Image URL | Works as expected |
+| ADD COFFEE CATEGORY button  | Click on the button | It will display flash message (confirmation)  and redirect an admin to 'coffee category' page. New category will be added on Coffee Category page | Works as expected |
+| EDIT COFFEE CATEGORY button  | Click on the button | It will display flash message (confirmation) about update and redirect an admin to 'coffee category' page. The updated category will be displayed on Coffee Category Page | Works as expected |
+<br><br>
+All original content has been checked - if retrieved properly - works as expected
+<br>
+All input fields validation and requirements - works as expected 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -325,6 +381,36 @@ Security features.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
 - [Balsamiq](https://en.wikipedia.org/wiki/Balsamiq)
 
+
+
+
+<!-- - ADD RECIPE PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| RECIPE NAME  | Input text into the Search bar | Validation applied; minlength 3 characters, if no input or less then 3 characters - red undelined | Works as expected |
+| CANCEL (Search) button | Click on Cancel button| It will remove all input from the Search bar and revert the bar into the initial position | Works as expected |
+| FIND (Search) button  | Input text into Search bar and click on Find button | Input a key word from recipe name, intro or ingredients and it will find the affected recipes | Works as expected |
+| DISCOVER RECIPE button | Click on Discover Recipe button | It will open a full recipe | Works as expected |
+
+ -->
+
+
+<!-- | NAV BAR - RECIPES| Click on the Recipes| It will redirect a user from any page to the Recipe page and is available even for non-registered users| Works as expected |
+ | NAV BAR - SIGN UP| Click on the Sign Up| It will redirect a user to a Sign Up form and it is available for all users| Works as expected | -->
+
+
+
+<!-- | RECIPE NAME  | Input text into the Search bar | Validation applied; min.5 and max.40 characters, if no input or less then 5 characters - red undelined; it will not let a user to input more then 40 characters | Works as expected |
+| RECIPE IMAGE URL  | Input url into the Recipe Image Url | It is optional to add Image URL, if not provided, alternative image will display | Works as expected |
+| RECIPE INTRODUCTION | Input text into the Recipe Introduction | This field is required, validation applied; min. 5 max.125 characters| Works as expected |
+| CATEGORY | Dropdown selection | This field is required, validation applied| Works as expected |
+| DIFFICULTY | Dropdown selection | This field is required, validation applied| Works as expected |
+| PREPARATION TIME | Input text into Preparation Time | It is required, validation applied, max.15 characters | Works as expected |
+| SERVES | Pick a number from options | It is required, validation applied, min.1 max.30 | Works as expected |
+| INGREDIENTS | Input text into Ingredients | It is required to input at least one line, validation applied, min.5 max.200 charcters; max.20 inputs allowed | Works as expected |
+| METHOD | Input text into Method | It is required to input at least one line, validation applied, min.5 max.750 charcters; max.20 inputs allowed | Works as expected |
+| ADD RECIPE button  | Click on Add recipe | It will display a flash message that recipe has been successfully added, it will be automatically shared with others in recipes page and also will appear in user's 'created recipes' tab | Works as expected | -->
 
 <!-- The COOL Quiz was created for anyone who wants to test their knowledge or learn some new interesting facts about the winter season. The players can take the quiz on their own or it can be used as a family indoor activity for those cold and dark evenings. The quiz has 12 multiple choice questions with a 120-second timer and a Top Score page so the players can save their best score. It hopes to engage all age groups or individuals of various interests, not just 'winter fans'.
 ![Responsive Design](assets/images/responsive-img.png) -->
