@@ -17,7 +17,14 @@ $(document).ready(function(){
     $('.tabs').tabs();
   });
 
-  
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+
+
+
+// From Task Manager Tutorial
   $(document).ready(function(){
   validateMaterializeSelect();
   function validateMaterializeSelect() {
@@ -47,64 +54,76 @@ $(document).ready(function(){
 	  });
   }
 });
+// End of code
 
 
-// Add and edit ingredients
 
+ // Adding and editing ingredients for a recipe
+let ingredients;
+let maxIngredients = 20;
 
-$(document).ready(function () {
+if ($("#number-ingredients").text()) {
+    ingredients = parseInt($("#number-ingredients").text()); 
+} else {
+    ingredients = 1;
+}
 
-	$("#repeatDivBtn").click(function () {
-
-		$newid = $(this).data("increment");
-		$repeatDiv = $("#repeatDiv").wrap('<div/>').parent().html();
-		$('#repeatDiv').unwrap();
-		$($repeatDiv).insertAfter($(".repeatDiv").last());
-		$(".repeatDiv").last().attr('id',   "repeatDiv" + '_' + $newid);
-		$("#repeatDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn styl removeDivBtn" data-id="repeatDiv'+'_'+ $newid+'">Remove</button></div>');
-		$newid++;
-		$(this).data("increment", $newid);
-
-	});
-
-
-	$(document).on('click', '.removeDivBtn', function () {
-
-		$divId = $(this).data("id");
-		$("#"+$divId).remove();
-		$inc = $("#repeatDivBtn").data("increment");
-		$("#repeatDivBtn").data("increment", $inc-1);
-
-	});
-
+$("#add-ing-btn").click(function (e) {
+    if (ingredients < maxIngredients) {
+        e.preventDefault();
+        $("#ingredients-wrapper").append(
+        `<div class="d-flex flex-row">
+            <input type="text" class="form-control flex-grow new-field" name="ingredients" required>
+            <button class="btn btn-styl btn-remove" type="button"><i class="fa-solid fa-x"></i></button>
+        </div>`);
+        ingredients++;
+    } else {
+        $("#add-ing-btn").text("You can't add more ingredients.");
+        e.preventDefault();
+    }
 });
 
-// Add and edit method
-
-$(document).ready(function () {
-
-	$("#repeatBtn").click(function () {
-
-		$newid = $(this).data("increment");
-		$repeatDiv = $("#repDiv").wrap('<div/>').parent().html();
-		$('#repDiv').unwrap();
-		$($repeatDiv).insertAfter($(".repDiv").last());
-		$(".repDiv").last().attr('id',   "repDiv" + '_' + $newid);
-		$("#repDiv" + '_' + $newid).append('<div class="input-field"><button type="button" class="waves-effect waves-light btn styl removeBtn" data-id="repDiv'+'_'+ $newid+'">Remove</button></div>');
-		$newid++;
-		$(this).data("increment", $newid);
-
-	});
-
-
-	$(document).on('click', '.removeBtn', function () {
-
-		$divId = $(this).data("id");
-		$("#"+$divId).remove();
-		$inc = $("#repeatBtn").data("increment");
-		$("#repeatBtn").data("increment", $inc-1);
-
-	});
-
+$("#ingredients-wrapper").on("click", ".btn-remove", function(e){
+    e.preventDefault();
+    $(this).parent('div').remove();
+    $("#add-ing-btn").html('<i class="fas fa-plus"></i> Add more');
+    ingredients--;
 });
+
+
+// Adding and editing method/directions for a recipe
+
+let directions;
+let maxDirections = 20; 
+
+if ($("#number-directions").text()) {
+    directions = parseInt($("#number-directions").text()); 
+} else {
+    directions = 1;
+}
+
+$("#add-dir-btn").click(function (e) {
+    if (directions < maxDirections) {
+        e.preventDefault();
+        $("#directions-wrapper").append(
+        `<div class="d-flex flex-row">
+            <input type="text" class="form-control new-field" name="method" required>
+            <button class="btn btn-styl btn-remove" type="button"><i class="fa-solid fa-x"></i></i></button>
+        </div>`);
+        directions++;
+    } else {
+        $("#add-dir-btn").text("You can't add more directions.");
+        e.preventDefault();
+    }
+});
+
+$("#directions-wrapper").on("click", ".btn-remove", function(e){
+    e.preventDefault();
+    $(this).parent('div').remove();
+    $("#add-dir-btn").html('<i class="fas fa-plus"></i> Add more');
+    directions--;
+});
+
+
+
 
