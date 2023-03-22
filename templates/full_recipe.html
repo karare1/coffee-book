@@ -8,7 +8,16 @@
     <div class="row full-div">
     <div class="row">
         
-        <div class="col s12 m6 l6 columns"><p> <img class="img-card" src="{{ recipe.recipe_image }}"></p></div>
+        <div class="col s12 m6 l6 columns">
+            {% if recipe.recipe_image %}
+            <img class="img-card" src="{{ recipe.recipe_image }}" alt="Various coffee images ot images with coffee theme">
+            {% else %}
+            <!-- <h3>No image displayed</h3> -->
+            <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
+            <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg" class="img-card">
+            <!-- <img src="{{ url_for('static', filename='/img/noimage.png') }}" class="noimage"> -->
+            {% endif %}
+        </div>
         <div class="col s12 m6 l6 columns">       
             <h4>{{ recipe.recipe_name }}</h4>
             <p>by {{ recipe.recipe_by }}</p>
@@ -22,7 +31,7 @@
            
             <div class="row">
                 <div class="col s12 m5 l5 center-align">
-                    {% if admin or session["user_record"]|lower == recipe.recipe_by|lower %} 
+                    {% if session.user_record|lower == "admin"|lower or session["user_record"]|lower == recipe.recipe_by|lower %} 
                     <a href="{{ url_for('edit_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Edit</a>
                     <a href="#mod-del" class="btn styl text-shadow modal-trigger">Delete</a>
                     {% endif %}
@@ -36,6 +45,19 @@
             <a href="{{ url_for('delete_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Delete</a>
             </div>
         </div>
+        {% if session.user_record %}
+
+        <!-- <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small delete-btns favourite-view-btns">{{ favourite_button_text }}</a> -->
+
+        {% if session.user_record != recipe.recipe_by %}
+            {% if recipe in favourites %}
+                <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small delete-btns favourite-view-btns btn-fav">{{ favourite_button_text }}</a>
+            {% else %}
+                <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small favourite-view-btns btn-fav ">{{ favourite_button_text }}</a>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
 
         </div>   
     </div>
