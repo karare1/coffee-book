@@ -34,51 +34,52 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <!-- Home and Recipe pages display to all users -->
-          <li><a href="{{ url_for('index') }}" class="nav-anchor">Home</a></li>
-          <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
+            <li><a href="{{ url_for('index') }}" class="nav-anchor">Home</a></li>
+            <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
           <!-- Profile page display to a signed up user -->
           {% if session.user_record %}
-          <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
+            <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
           <!-- category page display only to an admin -->
           {% if session.user_record|lower == "admin"|lower %}
             <li><a href="{{ url_for('coffee_categ') }}" class="nav-anchor">Coffee Category</a></li>
           {% endif %}
           <!-- log out page display only to a signed up user -->
-          <li><a href="{{ url_for('log_out') }}" class="nav-anchor">Log Out</a></li>
-        {% else %}
-        <!-- Sign up and log in display to all users -->
+            <li><a href="{{ url_for('log_out') }}" class="nav-anchor">Log Out</a></li>
+          {% else %}
+          <!-- Sign up and log in display to all users -->
           <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
           <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
-        {% endif %} 
+          {% endif %} 
         </ul>
       </div>
     </nav>
-    <!-- Mobile Navbar -->
+    <!-- Mobile Side Navbar -->
     <ul class="sidenav" id="mobile-demo">
-      <li>
-        <h4 class="center-align light-brown-text text-darken 4 gen-font">be home barista</h4>
-      </li>
+        <li>
+          <h4 class="center-align light-brown-text text-darken 4 gen-font mobile-font">be home barista</h4>
+        </li>
       <!-- Home and Recipe pages display to all users -->
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      <li><a href="{{ url_for('recipes') }}" class="nav-anchor">Recipes</a></li>
+        <li><a href="{{ url_for('index') }}" class="nav-anchor-mobile">Home</a></li>
+        <li><a href="{{ url_for('recipes') }}" class="nav-anchor-mobile">Recipes</a></li>
       <!-- Profile page display to a signed up user -->
-    {% if session.user_record %}
-      <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor">Profile</a></li>
+      {% if session.user_record %}
+        <li><a href="{{ url_for('profile', username=session['user_record']) }}" class="nav-anchor-mobile">Profile</a></li>
        <!-- category page display only to an admin -->
       {% if session.user_record|lower == "admin"|lower %}
-      <li><a href="{{ url_for('coffee_categ') }}" class="nav-anchor">Coffee Category</a></li>
+        <li><a href="{{ url_for('coffee_categ') }}" class="nav-anchor-mobile">Coffee Category</a></li>
       {% endif %}
       <!-- log out page display only to a signed up user -->
-      <li><a href="{{ url_for('log_out') }}" class="nav-anchor">Log Out</a></li>
-    {% else %}
+        <li><a href="{{ url_for('log_out') }}" class="nav-anchor-mobile">Log Out</a></li>
+      {% else %}
      <!-- Sign up and log in display to all users -->
-      <li><a href="{{ url_for('sign_up') }}" class="nav-anchor">Sign Up</a></li>
-      <li><a href="{{ url_for('log_in') }}" class="nav-anchor">Log In</a></li>
-    {% endif %}
+        <li><a href="{{ url_for('sign_up') }}" class="nav-anchor-mobile">Sign Up</a></li>
+        <li><a href="{{ url_for('log_in') }}" class="nav-anchor-mobile">Log In</a></li>
+      {% endif %}
     </ul>
   </header>
 
   <section>
+    <!-- template for flash messages -->
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
@@ -100,10 +101,10 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="gen-font styl-nav-foot">Navigate</h5>
-          <a href="{{ url_for('index') }}" class="gen-mar gen-styl-link">Home</a>
-          <a href="{{ url_for('recipes') }}" class="gen-mar gen-styl-link">Recipes</a>
-          <a href="{{ url_for('sign_up') }}" class="gen-mar gen-styl-link">Sign Up</a>
-          <a href="{{ url_for('log_in') }}" class="gen-styl-link">Log In</a>
+          <a href="{{ url_for('index') }}" class="gen-mar gen-styl-link brown-text text-darken-4">Home</a>
+          <a href="{{ url_for('recipes') }}" class="gen-mar gen-styl-link brown-text text-darken-4">Recipes</a>
+          <a href="{{ url_for('sign_up') }}" class="gen-mar gen-styl-link brown-text text-darken-4">Sign Up</a>
+          <a href="{{ url_for('log_in') }}" class="gen-styl-link brown-text text-darken-4 ">Log In</a>
           <div>
           </div>
         </div>
@@ -111,17 +112,17 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="gen-font">Social</h5>
           <ul class="ul-grid">
-            <li><a class="gen-font" href="#!"><i class="fa-brands fa-tiktok"></i></a></li>
-            <li><a class="gen-font" href="#!"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a class="gen-font" href="#!"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a class="gen-font" href="#!"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a class="gen-font" href="https://www.tiktok.com/" target=_blank aria-label="Link to Tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a class="gen-font" href="https://www.facebook.com/" target=_blank aria-label="Link to Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a class="gen-font" href="https://www.instagram.com/" target=_blank aria-label="Link to Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a class="gen-font" href="https://twitter.com/?lang=en" target=_blank aria-label="Link to Twitter"><i class="fa-brands fa-twitter"></i></a></li>
           </ul>
-          <p class="gen-font"><span class="add-styl"><strong>Contact:</strong></span><strong>be-homebarista@info.com</strong></p>
+          <p class="brown-text text-darken-4"><span class="add-styl"><strong>Contact:</strong></span><strong>be-homebarista@info.com</strong></p>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container gen-font">
+      <div class="container brown-text text-darken-4">
         © 2023 karare
       </div>
     </div>
