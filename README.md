@@ -46,7 +46,7 @@ Admin
   early sense of what the website is about.
 - Made the website responsive, visible and easy to read on desktops, laptops, tablets and smartphones.
 - The website 
-- Implement a search window for a user to find a recipe based on name, ingredients and recipe intro.
+- Implement a search bar for a user to find a recipe based on name, ingredients and recipe intro.
 - For signed-up users a profile page has been created with two tabs - for the recipes they created themselves and recipes 
   they added to their favourites.
 - If a user created/added a recipe two extra buttons appear in a full recipe pafe for them to edit or delete their
@@ -59,25 +59,6 @@ Admin
 - Addition and editing recipies are very siple as well, when editing a recipe all fields are populated with your original
   input so it is easy to make changes. 
 - Even for users that do not intend to sign up, this website could be helpful and informative.
-
-
-<!-- intuitive/first-time learning and effective
-In order to promote that form of ease-of-use and intuition
-it's always better to present your functionality to a user in
-the most intuitive way possible that promotes a positive user experience
-
-Sign up 
-Log In
-let's include some Icon Prefixes for a better user experience
-and layout.
-
-Werkzeug
-The two main helpers we're going to use for this mini-project, are "generate_password_hash",
-and "check_password_hash".
-Hashing passwords essentially means that we're converting the user's password into another
-string, which is one-way, and practically impossible to reverse.
-To include additional security, it will then salt that string with random data, making
-it even tougher to crack. -->
 
 
 ### Existing Features
@@ -123,19 +104,111 @@ it even tougher to crack. -->
 
  __Profile Page__
 
+ Profile Page is only assessible for registered users; here they can create their own coffee book. 
+ It consists of a personalized greeting with a welcome message, 'Add new recipe' button to prompt a registered user to add a new recipe and share it with the coffee community and the most important part: tabs for created recipes and favourite recipes. In created recipes tab are stored all recipies that the user has added and shared on the website. In favourite recipes tab are stored all recipies created by other users and added by the logged-in user when click on 'Add to favourites' button in a full recipe page. All created recipes can be edit or deleted and all favourite recipies can be removed from favouries and add to favouries again, if a user wish to. If no recipes created or added to favourites messages will be displayed to prompt a user to create or save recipes. 
+ A user can therefore create their personalized coffee book that contains both their own recipes as well as recipes they discover and like while searching or browsing on recipes page. 
  
+__Adding and Editing Recipes Page__
+
+Add recipe form will appear on screen once clicked on 'Add new recipe' button in the profile page.
+Again, the adding form is simple and straightforward. It includes input fields for: recipe name, recipe image url, category, difficulty, time of prepartion, serves and the most important, ingredients and method. 
+Ingredients and method input field have a button to add extra fields to input ingredients and step of preparation separately in new lines (or paragraphs). All fields are required to fill in apart from recipe image url; if the re recipe image url is not provided, a general image will be displayed instead.
+All fields have validation applied or pre-populated format make it easier of a user to fill in the form and provide a correct details. 
+
+Edit recipe form appear on screen if a user click the button on full recipe page. All original input will appear in input fields for better and more effective editting. If a user does not want to proceed and change the recipe, they can click on cancel button to go back to full recipe. If a user want to delete the created recipe they will click on 'delete' button and a confirmation pop-up block will be displayed to verify if they would like to proceed with an action.
 
 
-<!-- - _Body_
-  - The body includes an encouraging message to challenge the visitors to click on the START button and play the game.
-  - The skeleton of the body has three buttons:
-  - ABOUT button - clicking on the ABOUT button will display a pop-up box with the game rules. It includes all information the player 
-    needs to know before starting the game.
-  - START button is placed in the middle and has a different colour to underlay its importance. Clicking on this button will redirect 
-    the player to the game page where they can start the quiz.
-  - TOP SCORE button will forward the visitors to the list of the 7 best results.
-  - Overall, the body layout is simple to understand and easy to navigate for the user.
-   -->
+__Coffee Category Page__
+Coffee Category is displayed only if logged-in as an admin and provides an admin with an option to create, edit or delete a category. An admin also have an access to edit and delete all recipes on website in case any inapprocpiate or offensive content has been shared. Coffee category page includes a category cards with an image and 'edit' as well as 'delete' buttons. It has a 'Add coffee category' button that will redirect an admin to 'Add coffee category' form. 
+'Add coffee category' form has two input fields for a category name and category image url, but the latter one is optional. When clicking on 'Edit' button, editting form will appear on the screen with the original input for simple and effective editing. If an admin does not want to edit the category, they have an option to click on 'Cancel' button and return to 'Coffee Category' page.
+
+
+## Testing 
+
+Manual Testing of implemented features: <br><br>
+
+
+ - HOME PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| LOGO link  | Click on the logo | It will redirect a user from any page back to the Home page | Works as expected |
+| NAV BAR - HOME | Click on the Home | It will redirect a user from any page back to the Home page | Works as expected |
+| NAV BAR - RECIPES| Click on the Recipes| It will redirect a user from any page to the Recipe page and is available even for non-registered users| Works as expected |
+ | NAV BAR - SIGN UP| Click on the Sign Up| It will redirect a user to a Sign Up form and it is available for all users| Works as expected |
+ | NAV BAR - LOG IN| Click on the Log In| It will redirect a user to a Lof In form and it is available for all users| Works as expected |
+ | NAV BAR - PROFILE|Click on Profile |Profile is available only for registed users, once registered, clicking on it will redirect a registered user to the Profile page from any other page | Works as expected |
+ | NAV BAR - LOG OUT|Click on Log out |Log out is available only for logged-in users, once logged in, clicking on it will log out the user from their account and redirect them to Log In page| Works as expected |
+ | NAV BAR - COFFEE CATEGORIES|Click on Coffee Categories |It is available only to admin, and will redirect an admin from any other page to Coffee Categories| Works as expected |
+ | FOOTER - HOME link|Click on Home link|It will redirect a user from any page back to the Home page and if on Home page it will take a user back to the top of the page| Works as expected |
+ | FOOTER - RECIPES link|Click on Recipes link|It will redirect a user from any page to the Recipes page and if on Recipe page it will take a user back to the top of the page| Works as expected |
+ | FOOTER -  SIGN UP link|Click on Sign Up link|It will redirect a user from any page to the Sign Up page and if on Sign Up page it will take a user back to the top of the page| Works as expected |
+ | FOOTER -  LOG IN link|Click on Log In link|It will redirect a user from any page to the Log In page and if on Log In page it will take a user back to the top of the page| Works as expected |
+| FOOTER -  TikTok link|Click on TikTok link|It will open a new window with TikTok website| Works as expected |
+| FOOTER -  FACEBOOK link|Click on FACEBOOK link|It will open a new window with Facebook website| Works as expected |
+| FOOTER -  INSTAGRAM link|Click on Instagram link|It will open a new window with Instagram website| Works as expected |
+| FOOTER -  TWITTER link|Click on Twitter link|It will open a new window with Twitter website| Works as expected |
+| SIGN UP button|Click on Sign Up button|It will redirect a user to a Sign Up page | Works as expected |
+ <br><br>
+
+- RECIPE PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| SEARCH bar  | Input text into the Search bar | Validation applied; minlength 3 characters, if no input or less then 3 characters - red undelined | Works as expected |
+| CANCEL (Search) button | Click on Cancel button| It will remove all input from the Search bar and revert the bar into the initial position | Works as expected |
+| FIND (Search) button  | Input text into Search bar and click on Find button | Input a key word from recipe name, intro or ingredients and it will find the affected recipes | Works as expected |
+| DISCOVER RECIPE button | Click on Discover Recipe button | It will open a full recipe | Works as expected |
+<br><br>
+
+- FULL RECIPE PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| A user not logged in | Automatic feature | No buttons displayed (Edit, Delete, Favourites) if a user is not logged in | Works as expected |
+| User logged in | Automatic feature| It will display edit and delete buttons for recipes recipes created by the user and add/remove favourites button for other recipes  | Works as expected |
+| Logged in as a user | Automatic feature  | Both edit and delete  buttons for all recipes + add/remove favourites for recipes not created by admin | Works as expected |
+| EDIT (recipe) button | Click on Edit button | It will populate the edit recipe form with the original input | Works as expected |
+| DELETE (recipe) button | Click on Delete button | It will display a message for a user to confirm they wish to delete a recipe  | Works as expected |
+|CANCEL (confirmation) button | Click on Cancel button | It will redirect a user back to a full recipe  | Works as expected |
+|DELETE (confirmation) button | Click on Delete button | It will delete a recipe and redirect a user back to full recipe | Works as expected |
+| ADD TO FAVOURITES button | Click on Add to favourites button | It will sent a copy of the recipe into a user's profile, button will change to 'Remove from favourites' | Works as expected |
+| REMOVE FROM FAVOURITES button | Click on Remove from favourites button | It will remove a recipe from user's profile and button will change back to 'Add to favourites' | Works as expected |
+<br><br>
+
+- ADD RECIPE PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| RECIPE NAME  | Input text into the Search bar | Validation applied; minlength 3 characters, if no input or less then 3 characters - red undelined | Works as expected |
+| CANCEL (Search) button | Click on Cancel button| It will remove all input from the Search bar and revert the bar into the initial position | Works as expected |
+| FIND (Search) button  | Input text into Search bar and click on Find button | Input a key word from recipe name, intro or ingredients and it will find the affected recipes | Works as expected |
+| DISCOVER RECIPE button | Click on Discover Recipe button | It will open a full recipe | Works as expected |
+
+
+
+- RESULT PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| RESULT  | Automatic feature | The correct score will appear on the result page | Works as expected |
+| USERNAME  | Enter name | Only text of min 3 and max 10 letters is excepted, no numbers or spaces | Works as expected |
+| SAVE button  | Click the button| Saves the players’ score and takes them back to the home page | Works as expected |
+| SAVE button  | Click the button| Input validation – do not save the score if the entered username does not meet the relevant criteria | Works as expected |
+| GO HOME button  | Click the button | Takes players back to the home page if they do not want to save the score | Works as expected |
+| PLAY AGAIN buton  | Click the button | Takes players to the game page where they can start the quiz again without saving their score | Works as expected |
+
+<br><br>
+
+- TOP SCORE PAGE Testing
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Saved result | click on TOP SCORE button | Correct score displayed against a correctly saved name | Works as expected |
+| 7 best scores | click on TOP SCORE button | Score appears on this page only if it is within the 7 best results | Works as expected |
+| HOME buton  | Click the button | Takes the player back to the home page | Works as expected |
+
+<br><br>
 
 
 
@@ -173,12 +246,6 @@ it even tougher to crack. -->
 - [Edit Category Desktop](static/wireframes/Edit_Category_Desktop.png)
 - [Edit Category Laptop](static/wireframes/Edit_Category_Laptop.png)
 - [Edit Category Mobile](static/wireframes/Edit_Category_Mobile.png)
-
-
-
-
-
-
 
 
 
@@ -585,6 +652,24 @@ Also made use of:
 
 
 
+
+<!-- intuitive/first-time learning and effective
+In order to promote that form of ease-of-use and intuition
+it's always better to present your functionality to a user in
+the most intuitive way possible that promotes a positive user experience
+
+Sign up 
+Log In
+let's include some Icon Prefixes for a better user experience
+and layout.
+
+Werkzeug
+The two main helpers we're going to use for this mini-project, are "generate_password_hash",
+and "check_password_hash".
+Hashing passwords essentially means that we're converting the user's password into another
+string, which is one-way, and practically impossible to reverse.
+To include additional security, it will then salt that string with random data, making
+it even tougher to crack. -->
 
 
 
