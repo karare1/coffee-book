@@ -2,49 +2,33 @@
 {% block content %}
 
 
-
-<!-- <a href="{{ url_for('profile', username=session['user_record']) }}" class="waves-effect waves-light btn-small brown lighten-1 back-btn-styl "><i class="fa-solid fa-backward left"></i>Back to profile</a> -->
 <h3 class="center-align h3-styl">Edit your recipe</h3>
 
 
-
-
-<!-- {% for recipe in recipes %}
-{{ recipe.recipe_image }}<br>
-{{ recipe.category_name }}<br>
-{{ recipe.recipe_name }}<br>
-{{ recipe.recipe_intro }}<br>
-{{ recipe.preparation_time }}<br>
-{{ recipe.difficulty }}<br>
-{{ recipe.serves }}<br>
-{{ recipe.ingredients }}<br>
-{{ recipe.method }}<br>
-{% endfor %} -->
-
 <div class="row card-panel grey lighten-5">
-    <form class="col s12 offset-m1 " method="POST" action="{{ url_for('edit_recipe', Id_R=recipe._id ) }}">
+    <form class="col s12 m10 offset-m1 " method="POST" action="{{ url_for('edit_recipe', Id_R=recipe._id ) }}">
       <div class="row">
-        <div class="input-field col s10">
-          <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" class="validate" data-length="60" required>
-          <label for="recipe_name">Recipe Name</label>
+        <div class="input-field col s12">
+          <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" class="validate" minlength="5" maxlength="40" required>
+          <label for="recipe_name" class="brown-text text-darken-4">Recipe Name</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s10">
+        <div class="input-field col s12">
           <input id="recipe_url" name="recipe_url" type="url" value="{{ recipe.recipe_image }}" pattern="https://.*" class="validate">
-          <label for="recipe_url">Input image URL</label>
+          <label for="recipe_url" class="brown-text text-darken-4">Input image URL</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s10">
-          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" data-length="150" required>
+        <div class="input-field col s12">
+          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" minlength="5" maxlength="125" required>
           {{- recipe.recipe_intro -}}</textarea>
-          <label for="recipe_intro">Recipe introduction</label>
+          <label for="recipe_intro" class="brown-text text-darken-4">Recipe introduction</label>
         </div>
       </div>
 
       <div class="row">
-        <div class="input-field col s5">
+        <div class="input-field col s6">
             <select id="category_name" name="category_name" class="validate" required>
                 <option value="" disabled>Select</option>
                 {% for catg in catgs %}
@@ -55,11 +39,11 @@
                   {% endif %}
                 {% endfor %}
             </select>
-            <label for="category_name">Category</label>
+            <label for="category_name" class="brown-text text-darken-4">Category</label>
         </div>
     
         
-        <div class="input-field col s5">
+        <div class="input-field col s6">
           <select id="difficulty" name="difficulty" class="validate" required>
               <option value="" disabled>Select</option>
             {% for scale in diff %}
@@ -70,82 +54,84 @@
               {% endif %}
             {% endfor %}
           </select>
-          <label for="difficulty">Difficulty</label>
+          <label for="difficulty" class="brown-text text-darken-4">Difficulty</label>
       </div>
     </div>
      
-    
 
-
-        <!-- <div class="input-field col s5">
-            <select id="difficulty" name="difficulty" class="validate" required>
-                <option value="" disabled selected>Select</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <label for="difficulty">Difficulty</label>
-        </div>
-      </div>
-       
-      -->
       <div class="row">
-        <div class="input-field col s5">
-          <input id="preparation_time" name="preparation_time" type="text" value="{{ recipe.preparation_time }}" min="1" max="5000" class="validate" required>
-          <label for="preparation_time">Time of preparation</label>
+        <div class="input-field col s6">
+          <input id="preparation_time" name="preparation_time" type="text" value="{{ recipe.preparation_time }}"  maxlength="15" class="validate" required>
+          <label for="preparation_time" class="brown-text text-darken-4">Time of preparation</label>
         </div>
     
-        <div class="input-field col s5">
+        <div class="input-field col s6">
             <input id="serves" name="serves" type="number" value="{{ recipe.serves }}" min="1" max="30" class="validate" required>
-            <label for="serves">Serves</label>
+            <label for="serves" class="brown-text text-darken-4" >Serves</label>
         </div>
       </div>
         
-    <div class="row">
-        <div class="col s12 text-center">
-            <h6>Ingredients</h6>
-        </div>
-        
-           <div class="col s10">             
-            <div class="input-field repeatDiv" id="repeatDiv">
-              {% for ingredient in recipe.ingredients %}
-                <textarea type="text" id="ingredients" name="ingredients" class="materialize-textarea validate" placeholder= "e.g. 18g ground espresso" required>
-                {{- ingredient -}}</textarea>
-                <label for="ingredients"></label>
-                {% endfor %}
-            </div>           
-           <button type="button" class="waves-effect waves-light btn styl" id="repeatDivBtn" data-increment="1">Add More</button>            
-      </div>
-       
-    </div>
+    
+<!-- Ingredients -->
+<div class="col-12">
+  <label class="form-label brown-text text-darken-4" >
+      Ingredients
+  </label>
+  <div class="col-12" id="ingredients-wrapper">
+      {% for ingredient in recipe.ingredients %}
+          <div>
+              <input type="text" class="form-control flex-grow ingredients validate" name="ingredients" 
+                  value="{{ ingredient }}"  required>
+              <!-- first field cannot be deleted -->
+              {% if loop.index != 1 %} 
+                  <button class="btn btn-styl btn-remove" type="button"aria-label="remove ingredient">
+                    <i class="fa-solid fa-x"></i>
+                  </button>
+              {% endif %}
+          </div>    
+      {% endfor %}
+  </div>
+  <div class="col-12 more-space2">
+      <a href=""  id="add-ing-btn" class="add-btn-edit">
+          <i class="fas fa-plus"></i> Add more
+      </a>
+  </div>
+</div>
 
 
-    <div class="row">
-        <div class="col s12 text-center">
-            <h6>Method</h6>
-        </div>
-        <div class="col s10"></div>
-           <div class="col s10"> 
-           
-            <div class="input-field repDiv" id="repDiv">
-             
-                <textarea type="text" id="method" name="method" class="materialize-textarea validate" placeholder= "e.g. Pour the espresso over the chocolate or sauce in the cup or mug." required>              
-                {{-recipe.method-}}</textarea>
-                <label for="method"></label>
-               
-            </div>
-          
-            <button type="button" class="waves-effect waves-light btn styl " id="repeatBtn" data-increment="1">Add More</button>            
-      </div>
-      <div class="col s10"></div>
-      </div>
+<!-- Method -->
+<div class="col-12 more-space">
+  <label class="form-label brown-text text-darken-4">
+      Method
+  </label>
+  <div class="col-12" id="directions-wrapper">
+      {% for meds in recipe.method %}
+          <div>
+              <input type="text" class="form-control flex-grow directions" name="method" 
+                  value="{{ meds }}" required>
+              {% if loop.index != 1 %} 
+                  <button class="btn btn-styl btn-remove" type="button" aria-label="remove direction">
+                    <i class="fa-solid fa-x"></i>
+                  </button>
+              {% endif %}
+          </div>
+         
+      {% endfor %}
+  </div>
+  <div class="col-12 more-space2">
+      <a href="" role="button" id="add-dir-btn" class="add-btn-edit">
+          <i class="fas fa-plus"></i> Add more
+      </a>
+  </div>
+</div>
 
+<!-- Edit and Cancel button -->
       <div class="row">
-        <div class=" col s9 center-align edit-div">
-            <!-- cancel button -->
+        <div class=" col s9 center-align edit-div more-space">        
             <a href="{{ url_for('profile', username=session['user_record']) }}"  class="btn-large edit-btn styl text-shadow">
                 Cancel <i class="fa-solid fa-rectangle-xmark right" ></i>
             </a>
+      
             <button type="submit" class="btn-large styl text-shadow">
                 Edit you recipe <i class="fa-solid fa-file-pen right"></i>
             </button>
@@ -154,8 +140,6 @@
 
     </form>
 </div>
-
-
 
 
 {% endblock %}
