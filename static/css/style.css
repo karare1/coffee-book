@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* base template */
 body {
     background-color: #F6F4F1!important;
 }
@@ -9,7 +10,89 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
+
+main {
+    flex: 1 0 auto;
+}
+      
+
+.nav-styl {
+    background-color: #fff !important;
+}
+
+
+.logo-styl {
+    font-family: Pacifico, sans-serif;
+    margin-left: 2%;
+}
+
+.coffee-logo {
+    width: 40px;
+    height: 40px;
+    margin-top: 6%;
+    margin-left: 2%;
+}
+
+.fa-bars {
+    color:#846C63;
+}
+
+.nav-logo {
+    color: #846C63 !important;
+    font-weight: 700!important;
+}
+
+.nav-anchor {
+    color: #846C63 !important;
+    font-weight: 700!important;
+}
+
+.nav-anchor-mobile {
+    color: #846C63 !important;
+    font-weight: 700!important;
+}
+
+.nav-anchor:hover {
+    background-color: #BDB1AD;
+    color: white!important;
+}
+
+.gen-font{
+    color: #846C63 !important;
+    }
+    
+
+.foot-styl {
+    background-color: #F0E5D7 !important;
+}
+
+.ul-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 0.2fr); /* display 4 columns */
+}
+
+.fa-brands {
+    transform: scale(1.5);
+}
+
+.mobile-font {
+    font-family: Pacifico, sans-serif;
+}
+
+.div-flash-styl {
+    background-color: #F0E5D7;
+}
+
+.flash-styl {
+    font-size: 1.5rem;
+    color: #846C63;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+/* Index template */
 
 .img-back{
 background-image: url(../img/coffee-back.jpg);
@@ -45,47 +128,7 @@ top: 10%;
     width: 30%;
 }
 
-
-  main {
-    flex: 1 0 auto;
-  }
-      
-.nav-styl {
-    background-color: #fff !important;
-}
-
-.nav-logo {
-    color: #846C63 !important;
-    font-weight: 700!important;
-}
-
-.nav-anchor {
-    color: #846C63 !important;
-    font-weight: 700!important;
-}
-
-.nav-anchor:hover {
-    background-color: #BDB1AD;
-    color: white!important;
-}
-
-.foot-styl {
-    background-color: #F0E5D7 !important;
-}
-
-.gen-font{
-color: #846C63 !important;
-}
-
-
-.ul-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 0.2fr); /* display 4 columns */
-    }
-
-.fa-brands {
-    transform: scale(1.5);
-}
+/* Sign-up /Log In */
 
 .btn-styl {
     background-color: #846C63;
@@ -103,38 +146,45 @@ background-color: #BDB1AD;
     color: #846C63!important;
 }
 
-.logo-styl {
-    font-family: Pacifico, sans-serif;
-    margin-left: 2%;
-}
-
-.coffee-logo {
-    width: 40px;
-    height: 40px;
-    margin-top: 6%;
-    margin-left: 2%;
-}
-
 .p-sign-styl{
     color: #88AAA9;
     font-weight: 600;
     font-size: 1.5rem;
 }
 
-.flash-styl {
-    font-size: 1.5rem;
-    color: #846C63;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
 
-.div-flash-styl {
-background-color: #F0E5D7;
 
-}
+/* Profile */
 .prof-styl {
     color: #846C63;
     padding:2%;
+    margin-bottom: 3%;
+}
+
+.tabs .tab a {
+    color: #846C63;
+    font-size: 1.5vw;
+}
+
+.tabs .tab a.active {
+    color: #846C63;
+}
+
+.tabs .tab a:hover {
+    background-color: #F0E5D7;
+    color: #846C63;
+}
+
+.tabs .indicator {
+   background-color: #F0E5D7;
+}
+
+.prof-add {
+    margin-bottom: 4%;
+}
+
+.creat-rec {
+    margin-bottom: 3%;
 }
 
 .card-link {
@@ -175,6 +225,12 @@ background-color: #F0E5D7;
     object-fit: cover;
     height: 200px;
     overflow: hidden;
+}
+
+
+.more-space3 {
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .img-catg {
@@ -305,12 +361,8 @@ color: white;
 .gen-styl-link {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #88AAA9;
 }
 
-.gen-styl-link:hover {
-    color: #0d9aec;
-}
 
 .styl-nav-foot {
     margin-bottom: 10%;
@@ -320,14 +372,87 @@ color: white;
     margin-right: 2%;
 }
 
+/* edit page */
+
+.add-btn-edit {
+    font-size: 1.5vw;
+    color:#846C63;
+}
+
+.more-space {
+    margin-top:7%;
+}
+
+.more-space2 {
+    margin-top:3%;
+}
+
+/* label{
+font: 1rem!important;
+} */
+
+/* full-recipe */
+.btn-fav {
+    background-color: #F0E5D7;
+    color: #846C63;
+    font-weight: 600;
+}
+.btn-fav:hover {
+    color: #f1e2ce;
+    background-color: #846C63;
+    font-weight: 600;
+}
 
 
 
-@media (max-width: 767px) {
-    /* .hidden-mobile {
-      display: none;
-    } */
-    body {
+
+
+
+@media (max-width: 1060px) {
+    .edit-btn {
+        margin-top: 3%;
+        margin-bottom: 5%;
+        margin-right: 0px;
+        display: block;
+
+    }
+}
+
+
+
+  @media (max-width: 995px) {
+    .coffee-logo{
+        margin-left: 70%;
+    }
+
+    main {
+        width: 100%;
+        display: contents;
+        margin: 0px;
+    }
+
+    .ticks {
+        width: 46%; 
+        left: 2%;
+        top: 17%;
+        font-size: 2vw;
+        padding-left: 2%;
+        padding-bottom: 2%;
+       
+    }
+
+    .block-search {
+        display:block;
+       
+    }
+    .longer {
+        width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+   
+    main {
         width: 100%;
         display: contents;
         margin: 0px;
@@ -339,23 +464,27 @@ color: white;
         font-size:7vw;
     }
 
-    .fa-bars {
-        color:#846C63;
-    }
-
     .coffee-logo{
         margin-left: 70%;
     }
 
     .ticks {
-        width: 92%; 
-        left: 1.5%;
-        top: 13.3%;
+        width: 90%; 
+        left: 2%;
+        top: 17%;
         font-size: 4vw;
         padding-left: 2%;
-       
+        padding-bottom: 2%;
     }
+
+    .row .col.s9 {
+        width: auto;
+    }
+
+
   }
+
+
 
 /* .full-rec-name {
     margin: 0px;
@@ -372,3 +501,10 @@ color: white;
 } */
 
 /* color: #88AAA9!important; */
+
+/* .flash-styl {
+    font-size: 1.5rem;
+    color: #846C63;
+    padding-top: 1%;
+    padding-bottom: 1%;
+} */
