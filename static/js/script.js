@@ -1,27 +1,10 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
-  });
-
-$(document).ready(function() {
-  $('input#recipe_name, textarea#recipe_intro').characterCounter();
-});
-
-$(document).ready(function(){
-  $('select').formSelect();
-  
-  $('#textarea1').val('New Text');
-  M.textareaAutoResize($('#textarea1'));
-});
-
-$(document).ready(function(){
+    $('select').formSelect();
     $('.tabs').tabs();
-  });
-
-  $(document).ready(function(){
     $('.modal').modal();
+
   });
-
-
 
 
 // From Task Manager Tutorial
@@ -54,10 +37,10 @@ $(document).ready(function(){
 	  });
   }
 });
-// End of code
 
 
 
+// Modifying from Cookle cookbook
  // Adding and editing ingredients for a recipe
 let ingredients;
 let maxIngredients = 20;
@@ -73,12 +56,12 @@ $("#add-ing-btn").click(function (e) {
         e.preventDefault();
         $("#ingredients-wrapper").append(
         `<div class="d-flex flex-row">
-            <input type="text" class="form-control flex-grow new-field" name="ingredients" required>
+            <input type="text" class="form-control flex-grow new-field" minlength="5" maxlength="200" name="ingredients" required>
             <button class="btn btn-styl btn-remove" type="button"><i class="fa-solid fa-x"></i></button>
         </div>`);
         ingredients++;
     } else {
-        $("#add-ing-btn").text("You can't add more ingredients.");
+        $("#add-ing-btn").text("You have reached the max input.");
         e.preventDefault();
     }
 });
@@ -107,12 +90,12 @@ $("#add-dir-btn").click(function (e) {
         e.preventDefault();
         $("#directions-wrapper").append(
         `<div class="d-flex flex-row">
-            <input type="text" class="form-control new-field" name="method" required>
+            <input type="text" class="form-control new-field" minlength="5" maxlength="750" name="method" required>
             <button class="btn btn-styl btn-remove" type="button"><i class="fa-solid fa-x"></i></i></button>
         </div>`);
         directions++;
     } else {
-        $("#add-dir-btn").text("You can't add more directions.");
+        $("#add-dir-btn").text("You have reached the max input.");
         e.preventDefault();
     }
 });
@@ -123,6 +106,7 @@ $("#directions-wrapper").on("click", ".btn-remove", function(e){
     $("#add-dir-btn").html('<i class="fas fa-plus"></i> Add more');
     directions--;
 });
+
 
 
 

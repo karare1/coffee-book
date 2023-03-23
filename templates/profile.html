@@ -21,8 +21,8 @@
 <div class="row">
   <div class="col s12">
     <ul class="tabs creat-rec ">
-      <li class="tab col s6 brown-text raw"><a href="#created-recipes">Created Recipes</a></li>
-      <li class="tab col s6 brown-text"><a class="active" href="#favourite-recipes">Favourite Recipes</a></li>   
+      <li class="tab col s6 brown-text raw"><a href="#created-recipes" class="brown-text text-darken-4">Created Recipes</a></li>
+      <li class="tab col s6 brown-text"><a class="active" href="#favourite-recipes" class="brown-text text-darken-4">Favourite Recipes</a></li>   
     </ul>
   </div>
   
@@ -52,7 +52,7 @@
      {% endfor %}
    {% else %}
     <div class="center-align gen-font">
-      <h5>No recipes created, please add a recipe and share with others.</h5>
+      <h6 class="brown-text text-darken-4">No recipes created, please add a recipe.</h6>
     </div>
    {% endif %}
 </div>
@@ -83,7 +83,7 @@
     {% endfor %}
   {% else %}
     <div class="center-align gen-font">
-      <h5>No recipes saved, please add your favourite recipe.</h5>
+      <h6 class="brown-text text-darken-4">No recipes saved, please save your favourite recipe here.</h6>
     </div>
   {% endif %}
   </div>

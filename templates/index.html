@@ -2,13 +2,13 @@
 {% block content %}
 
 <div class="index-div">
-<h4 class="brown-text text-darken-4 index-h4">Create your own coffee book!</h4>
+<h4 class="brown-text text-darken-4 index-h4">Create your coffee book!</h4>
 <div class="img-back">
     <div class="card-pannel ticks">
        
-        <p class="brown-text text-darken-4"><i class="fa-solid fa-check"></i>Create your account</p>
+        <p class="brown-text text-darken-4"><i class="fa-solid fa-check"></i>Sign Up for an account</p>
         <p class="brown-text text-darken-4"><i class="fa-solid fa-check"></i>Share your recipes with other coffee lovers</p>
-        <p class="brown-text text-darken-4" ><i class="fa-solid fa-check"></i>Add recipes you like to your coffee book</p>
+        <p class="brown-text text-darken-4" ><i class="fa-solid fa-check"></i>Add the recipes you like to your coffee book</p>
         <div class="center-align">
         <a href="{{ url_for('sign_up') }}" class="btn styl text-shadow">Sign Up</a>
         </div>
@@ -16,25 +16,5 @@
   
 </div>
 </div>
-
-
-
-    <!-- <h2>I love coffee. It wakes you up, makes mornings bearable, and best of all, 
-        tastes delicious. Is there anything it can't do?</h2>
-    <p>And even better: There are a ton of coffee recipes you can make at home, 
-        with ingredients you already have in the fridge.</p>
-
-    {% for recipe in recipes %}
-        {{ recipe.recipe_image }}<br>
-        {{ recipe.task_name }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.recipe_intro }}<br>
-        {{ recipe.preparation_time }}<br>
-        {{ recipe.difficulty }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-    {% endfor %} -->
 
 {% endblock %}

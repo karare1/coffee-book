@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- <a href="{{ url_for('recipes') }}" 
-    class="waves-effect waves-light btn-small brown lighten-1 back-btn-styl back-full-rec">
-    <i class="fa-solid fa-backward left"></i>Back to recipes</a> -->
 
     <div class="row full-div">
     <div class="row">
@@ -12,78 +9,70 @@
             {% if recipe.recipe_image %}
             <img class="img-card" src="{{ recipe.recipe_image }}" alt="Various coffee images ot images with coffee theme">
             {% else %}
-            <!-- <h3>No image displayed</h3> -->
-            <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
             <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg" class="img-card">
-            <!-- <img src="{{ url_for('static', filename='/img/noimage.png') }}" class="noimage"> -->
             {% endif %}
         </div>
         <div class="col s12 m6 l6 columns">       
             <h4>{{ recipe.recipe_name }}</h4>
-            <p>by {{ recipe.recipe_by }}</p>
+            <p>by {{ recipe.recipe_by }}</p>         
             <p>{{ recipe.category_name }}</p>
             <div class="row">
-                <div class="col s12 m5"><p><i class="fa-solid fa-circle-check icon-styl"></i>Prep: {{ recipe.preparation_time }}</p></div>
-                <div class="col s12 m4"><p><i class="fa-solid fa-crown icon-styl "></i>{{ recipe.difficulty }} </p></div> 
-                <div class="col s12 m3"><p><i class="fa-solid fa-utensils icon-styl"></i>Serves: {{ recipe.serves }}</p></div>
+                <div class="col s12 m5"><p><i class=" fa-sharp fa-solid fa-clock icon-styl"></i>{{ recipe.preparation_time }}</p></div>
+                <div class="col s12 m3"><p><i class="fa-solid fa-crown icon-styl "></i>{{ recipe.difficulty }} </p></div> 
+                <div class="col s12 m4"><p><i class="fa-solid fa-utensils icon-styl"></i>Serves: {{ recipe.serves }}</p></div>
             </div>
             <blockquote class="block-styl">{{ recipe.recipe_intro }}</blockquote>
-           
+
+           <!-- Delete/Edit buttons -->
             <div class="row">
-                <div class="col s12 m5 l5 center-align">
+                <div class="col s12 m10 l10 center-align">
                     {% if session.user_record|lower == "admin"|lower or session["user_record"]|lower == recipe.recipe_by|lower %} 
                     <a href="{{ url_for('edit_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Edit</a>
                     <a href="#mod-del" class="btn styl text-shadow modal-trigger">Delete</a>
                     {% endif %}
                 </div>
             </div>
+           
+            <div id="mod-del" class="modal">
+                <div class="modal-content center-align gen-font">
+                    <h5 class="space-modal"><i class="fa-solid fa-trash"></i>Delete this recipe?</h5>
+                    <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow space-link">Cancel</a>
+                    <a href="{{ url_for('delete_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Delete</a>
+                </div>
+            </div>
+            <!-- Favourites -->
+            {% if session.user_record %}
+                {% if session.user_record != recipe.recipe_by %}
+                    {% if recipe in favourites %}
+                    <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small delete-btns favourite-view-btns btn-fav">{{ favourite_button_text }}</a>
+                    {% else %}
+                    <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small favourite-view-btns btn-fav ">{{ favourite_button_text }}</a>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            </div>   
+        </div>
+        <!-- Ingredients and Method -->
+        <div class="row">    
+            <div class="col s12 m5 l5">
+                <h5 class="pad">Ingredients</h5>
+                {% for ingredient in recipe.ingredients %}
+                    <ul>
+                        <li class="ul-styl">{{ ingredient }}</li>
+                    </ul>
+                {% endfor %}
+            </div>
 
-        <div id="mod-del" class="modal">
-            <div class="modal-content center-align gen-font">
-            <h5 class="space-modal"><i class="fa-solid fa-trash"></i>Delete this recipe?</h5>
-            <a href="{{ url_for('full_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow space-link">Cancel</a>
-            <a href="{{ url_for('delete_recipe', Id_R=recipe._id) }}" class="btn styl text-shadow">Delete</a>
+            <div class="col s12 m7 l7">
+                <h5 class="center-align">Method</h5>
+                <ol >
+                {% for point in recipe.method %}
+                    <li><p>{{ point }}</p></li>   
+                {% endfor %}
+                </ol>
             </div>
         </div>
-        {% if session.user_record %}
-
-        <!-- <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small delete-btns favourite-view-btns">{{ favourite_button_text }}</a> -->
-
-        {% if session.user_record != recipe.recipe_by %}
-            {% if recipe in favourites %}
-                <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small delete-btns favourite-view-btns btn-fav">{{ favourite_button_text }}</a>
-            {% else %}
-                <a href="{{ url_for('favourites', Id_R=recipe._id) }}" class="waves-effect btn-small favourite-view-btns btn-fav ">{{ favourite_button_text }}</a>
-            {% endif %}
-        {% endif %}
-    {% endif %}
-
-
-        </div>   
-    </div>
-    
-<div class="row">    
-    <div class="col s12 m5 l5">
-        <h5 class="pad">Ingredients</h5>
-        <!-- <h1>{{recipe.ingredients}}</h1> -->
-        {% for ingredient in recipe.ingredients %}
-    <ul>
-        <li class="ul-styl">{{ ingredient }}</li>
-    </ul>
-    {% endfor %}
-    </div>
-
-    <div class="col s12 m7 l7">
-        <h5 class="center-align">Method</h5>
-        <ol >
-    {% for point in recipe.method %}
-        <li><p>{{ point }}</p></li>   
-    {% endfor %}
-        </ol>
-    </div>
-</div>
 
 </div>
-
 
 {% endblock %}

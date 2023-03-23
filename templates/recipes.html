@@ -1,23 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- <h2>I love coffee. It wakes you up, makes mornings bearable, and best of all, 
-        tastes delicious. Is there anything it can't do?</h2>
-    <p>And even better: There are a ton of coffee recipes you can make at home, 
-        with ingredients you already have in the fridge.</p>
-
-    {% for recipe in recipes %}
-        {{ recipe.recipe_image }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.recipe_intro }}<br>
-        {{ recipe.preparation_time }}<br>
-        {{ recipe.difficulty }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-    {% endfor %} -->
-
 
       <h3 class="center-align gen-font">Our Coffee Recipes</h3>
 
@@ -25,13 +8,13 @@
 
     <div class="row find-styl">
       <form action="{{ url_for('find') }}" method="post" class="col s12">
-          <div class="row valign-wrapper center-align block-search ">
-              <div class="input-field col s12 m8">
+          <div class="row valign-wrapper center-align block-search">
+              <div class="input-field col s12 m12 l8">
                   <i class="fas fa-search prefix gen-font"></i>
                   <input type="text" name="question" id="question" minlength="3" class="validate" required>
                   <label for="question">Find your recipe</label>
               </div>
-              <div class="col s12 m4">
+              <div class="col s12 m12 l4">
                   <a href="{{ url_for('recipes') }}" class="btn styl text-shadow">Reset</a>
                   <button type="submit" class="btn styl text-shadow">
                       <i class="fas fa-search left"></i> Find
@@ -42,22 +25,16 @@
   </div>
 
     
-    <div class="row">
+    <div class="row rec-widt">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
               {% if recipe.recipe_image %}
               <img src="{{ recipe.recipe_image }}" alt="Various coffee images ot images with coffee theme.">
-              <!--If recipe has an image then displayed-->
-              <!-- If recipe doesn't have an image use alternative -->
               {% else %}
-              <!-- <img src='../../static/img/coffee-beans.jpg'> -->
-              <!-- <img src="{{ url_for('static', filename='/img/coffee-beans.jpg') }}"> -->
-              <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg" alt="Image of coffee beans">,
-              <!-- <img src="{{ url_for('static', filename='/img/noimage1.png') }}"> -->
+              <img src="https://cdn.pixabay.com/photo/2022/04/11/16/29/coffee-beans-7126154_960_720.jpg" alt="Image of coffee beans">
               {% endif %}
-              <!-- <span class="card-title">{{ recipe.recipe_name }}</span> -->
             </div>
             <div class="center-align card-content">
               <h6 class="card-title" >{{ recipe.recipe_name }}</h6>

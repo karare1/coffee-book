@@ -6,25 +6,29 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('add_recipe') }}">
+      <!-- Recipe name -->
       <div class="row">
         <div class="input-field col s12">
           <input id="recipe_name" name="recipe_name" type="text" class="validate" minlength="5" maxlength="40" required>
           <label for="recipe_name" class="brown-text text-darken-4">Recipe Name</label>
         </div>
       </div>
+      <!-- Recipe image -->
       <div class="row">
         <div class="input-field col s12">
           <input id="recipe_url" name="recipe_url" type="url" pattern="https://.*" class="validate">
-          <label for="recipe_url" class="brown-text text-darken-4">Input image URL</label>
+          <label for="recipe_url" class="brown-text text-darken-4">Recipe image URL</label>
         </div>
+      <!-- Recipe Intro -->
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="recipe_intro" name="recipe_intro" class="materialize-textarea validate" minlength="5" maxlength="125" required></textarea>
+          <input id="recipe_intro" name="recipe_intro" type="text" class="validate" minlength="5" maxlength="125" required>
           <label for="recipe_intro" class="brown-text text-darken-4">Recipe introduction</label>
         </div>
       </div>
 
+    <!-- Category -->
       <div class="row">
         <div class="input-field col s6">
             <select id="category_name" name="category_name" class="validate" required>
@@ -36,7 +40,7 @@
             <label for="category_name" class="brown-text text-darken-4">Category</label>
         </div>
     
-    
+      <!-- Difficulty -->
         <div class="input-field col s6">
             <select id="difficulty" name="difficulty" class="validate" required>
                 <option value="" disabled selected>Select</option>
@@ -47,52 +51,50 @@
             <label for="difficulty" class="brown-text text-darken-4">Difficulty</label>
         </div>
       </div>
-       
+       <!-- Preparation Time -->
       <div class="row">
         <div class="input-field col s6">
           <input id="preparation_time" name="preparation_time" type="text"  maxlength="15" class="validate" required>
-          <label for="preparation_time" class="brown-text text-darken-4">Time of preparation</label>
+          <label for="preparation_time" class="brown-text text-darken-4">Preparation Time</label>
         </div>
-    
+      <!-- Serves -->
         <div class="input-field col s6">
             <input id="serves" name="serves" type="number" min="1" max="30" class="validate" required>
             <label for="serves" class="brown-text text-darken-4">Serves</label>
         </div>
       </div>
         
-    
+        <!-- Ingredients -->
+      <div class="col-12">
+        <label for="ingredient" class="form-label brown-text text-darken-4 font-ing">
+            Ingredients
+        </label>
+        <div class="col-12" id="ingredients-wrapper">
+            <input type="text" class="form-control ingredients validate"
+                id="ingredient" minlength="5" maxlength="200" name="ingredients" required>
+        </div>
+        <div class="col-12 more-space2">
+            <a href="" role="button" id="add-ing-btn" class="add-btn-edit">
+                <i class="fas fa-plus"></i> Add more 
+            </a>
+        </div>
+      </div>
 
-  <!-- Ingredients -->
-<div class="col-12">
-  <label for="ingredient" class="form-label brown-text text-darken-4">
-       Ingredients
-  </label>
-  <div class="col-12" id="ingredients-wrapper">
-      <input type="text" class="form-control ingredients validate" 
-          id="ingredient" name="ingredients" required>
-  </div>
-  <div class="col-12 more-space2">
-      <a href="" role="button" id="add-ing-btn" class="add-btn-edit">
-          <i class="fas fa-plus"></i> Add more 
-      </a>
-  </div>
-</div>
-
- <!-- Method -->
-<div class="col-12 more-space">
-  <label for="method" class="form-label brown-text text-darken-4">
-      Method
-  </label>
-  <div class="col-12" id="directions-wrapper">
-      <input type="text" class="form-control method validate" 
-          id="method" name="method" required>
-  </div>
-  <div class="col-12 more-space2">
-      <a href="" role="button" id="add-dir-btn" class="add-btn-edit" >
-          <i class="fas fa-plus"></i> Add more
-      </a>
-  </div>
-</div>
+      <!-- Method -->
+      <div class="col-12 more-space">
+        <label for="method" class="form-label brown-text text-darken-4 font-ing">
+            Method
+        </label>
+        <div class="col-12" id="directions-wrapper">
+            <input type="text" class="form-control method validate"
+                id="method" minlength="5" maxlength="750" name="method" required>
+        </div>
+        <div class="col-12 more-space2">
+            <a href="" role="button" id="add-dir-btn" class="add-btn-edit" >
+                <i class="fas fa-plus"></i> Add more
+            </a>
+        </div>
+      </div>
 
       <div class="row">
         <div class="col s10 center-align more-space">
@@ -102,7 +104,7 @@
         </div>
     </div>
 
-    </form>
+  </form>
 </div>
 
 

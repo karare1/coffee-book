@@ -4,12 +4,12 @@
 <h3 class="center-align h3-styl">Sign Up</h3>
 
 <div class="row">
-    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
+    <form class="col s12 l6 offset-l3" method="POST" action="{{ url_for('sign_up') }}">
       <!-- Username input + regular expression applied-->
       <div class="row">
         <div class="input-field col s12">
           <i class="fa-solid fa-user prefix"></i>
-          <input id="username" name="username" type="text" minlength="5" maxlength="12" pattern="^[a-zA-Z0-9]{5,12}$" class="validate" required>
+          <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
           <label for="username">Username</label>
         </div>
       </div>

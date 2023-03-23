@@ -7,17 +7,17 @@
 
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12 offset-m1" method="POST" action="{{ url_for('add_coffee_categ') }}">
+    <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('add_coffee_categ') }}">
         <!-- input for a coffee category name -->
       <div class="row">
-        <div class="input-field col s10">
-          <input id="coffee_categ_name" name="category_name" type="text" class="validate" minlength="4" maxlength="30"  required>
+        <div class="input-field col s12">
+          <input id="coffee_categ_name" name="category_name" type="text" class="validate" minlength="4" maxlength="30" pattern="^(?!.*[\p{P} ]{3})[a-zA-Z0-9\p{P} ]{4,30}$" required>
           <label for="coffee_categ_name" class="brown-text text-darken-4">Coffee Category Name</label>
         </div>
       </div>
       <!-- input for a coffee category url -->
       <div class="row">
-        <div class="input-field col s10">
+        <div class="input-field col s12">
           <input id="coffee_categ_img" name="category_img" type="url" pattern="https://.*" class="validate">
           <label for="coffee_categ_img" class="brown-text text-darken-4">Input category image URL</label>
         </div>

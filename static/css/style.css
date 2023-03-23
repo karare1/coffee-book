@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-/* base template */
+
+/* _________Base___________ */
+
 body {
     background-color: #F6F4F1!important;
 }
@@ -16,11 +18,9 @@ main {
     flex: 1 0 auto;
 }
       
-
 .nav-styl {
     background-color: #fff !important;
 }
-
 
 .logo-styl {
     font-family: Pacifico, sans-serif;
@@ -58,10 +58,14 @@ main {
     color: white!important;
 }
 
-.gen-font{
+.gen-font {
     color: #846C63 !important;
     }
     
+.gen-styl-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 
 .foot-styl {
     background-color: #F0E5D7 !important;
@@ -69,7 +73,7 @@ main {
 
 .ul-grid {
     display: grid;
-    grid-template-columns: repeat(4, 0.2fr); /* display 4 columns */
+    grid-template-columns: repeat(4, 0.2fr); 
 }
 
 .fa-brands {
@@ -91,16 +95,43 @@ main {
     padding-bottom: 1%;
 }
 
+.styl-nav-foot {
+    margin-bottom: 10%;
+}
 
-/* Index template */
+.gen-mar {
+    margin-right: 3%;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* _________Index___________ */
+
+.styl {
+    background-color: #846C63;
+}
+
+.styl:hover {
+    background-color: #b4998e;
+}
+
+.index-h4 {
+    font-weight: 500;
+    margin-bottom: 3%;
+}
+
+.index-div {
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
 
 .img-back{
-background-image: url(../img/coffee-back.jpg);
-width:100%;
-height: 600px;
-background-position:center;
-background-size:cover;
-background-repeat: no-repeat; 
+    background-image: url(../img/coffee-back.jpg);
+    width:100%;
+    height: 600px;
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat; 
 }
 
 .fa-check {
@@ -108,10 +139,9 @@ background-repeat: no-repeat;
 }
 
 .text-img {
-position: absolute;
-width: 100%;
-/* text-align: center; */
-top: 10%;
+    position: absolute;
+    width: 100%;
+    top: 10%;
 }
 
 .ticks {
@@ -120,15 +150,14 @@ top: 10%;
     font-size: 1.2rem;
     position: absolute;
     margin:3% 2%;
-    padding: 1%;
-    /* background-color: #F6F4F1!important; */
+    padding: 1%;  
     color: #846C63;
     background-color: #F0E5D7 !important;
-    /* color: white; */
-    width: 30%;
+    width: 31%;
 }
 
-/* Sign-up /Log In */
+
+/* _________Sign Up/Log In___________ */
 
 .btn-styl {
     background-color: #846C63;
@@ -153,8 +182,8 @@ background-color: #BDB1AD;
 }
 
 
+/* _________Profile___________ */
 
-/* Profile */
 .prof-styl {
     color: #846C63;
     padding:2%;
@@ -206,13 +235,8 @@ background-color: #BDB1AD;
     margin-top: 2%;
 }
 
-.styl {
-    background-color: #846C63;
-}
 
-.styl:hover {
-    background-color: #b4998e;
-}
+/* _________Recipes___________ */
 
 .card .card-content {
     padding-left: 3%;
@@ -226,23 +250,7 @@ background-color: #BDB1AD;
     height: 200px;
     overflow: hidden;
 }
-
-
-.more-space3 {
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.img-catg {
-    object-fit: cover;
-    height: 200px;
-}
-
-.back-full-rec {
-    margin-bottom: 3%;
-}
-
-
+ 
 .link {
     position: absolute;
     width: 100%;
@@ -251,72 +259,6 @@ background-color: #BDB1AD;
     left: 0;
     z-index: 1;
     text-align: center;
-    }
-
-
-.ul-styl {
-        padding-bottom: 15px;
-        border-bottom-style: solid;
-        border-bottom-width: 1.5px;
-        border-color: darkgrey;    
-}
-
-
-.pad{
-    padding-bottom: 2%
-}
-
-.styl-1 {
-    color: #846C63;
-    font-weight: 600;
-}
-
-.icon-styl {
-    padding-right: 10%;
-    font-size: 1.5rem;
-    color: #88AAA9;
-}
-
-.block-styl {
-border-left-color:  #88AAA9;
-margin-top: 3%;
-margin-bottom: 12%;
-}
-
-.card-color {
-background-color: #F0E5D7;
-padding-top: 1px;
-}
-
-.img-card {
-    height: 100%;
-    width: 100%;
-    object-fit:cover;
-    aspect-ratio: 1 / 0.908;
-   
-}
-
-
-.edit-btn {
-   margin-right: 10%;
-}
-
-.edit-div {
-    margin-top: 5%;
-}
-
-.btns {
-background-color: #88AAA9;
-color: white;
-}
-
-.btn-height {
-   margin-top: 25%;
-}
-
-.add-btn{
-    margin-top: 5%;
-    margin-bottom: 5%
 }
 
 .find-styl {
@@ -325,14 +267,64 @@ color: white;
 }
 
 
-.index-h4 {
-    font-weight: 500;
+/* _________Coffee category___________ */
+
+.img-catg {
+    object-fit: cover;
+    height: 200px;
+}
+
+.more-space3 {
+    margin-top: 3%;
     margin-bottom: 3%;
 }
 
-.index-div {
+/* _________Full Recipe___________ */
+
+.img-card {
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    aspect-ratio: 1 / 0.908;   
+}
+
+.btn-fav {
+    background-color: #F0E5D7;
+    color: #846C63;
+    font-weight: 600;
+}
+.btn-fav:hover {
+    color: #f1e2ce;
+    background-color: #846C63;
+    font-weight: 600;
+}
+
+.btns {
+    background-color: #88AAA9;
+    color: white;
+    }
+
+.block-styl {
+    border-left-color:  #88AAA9;
     margin-top: 3%;
-    margin-bottom: 5%;
+    margin-bottom: 12%;
+}
+
+.icon-styl {
+    padding-right: 10%;
+    font-size: 1.5rem;
+    color: #88AAA9;
+}
+
+.ul-styl {
+    padding-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1.5px;
+    border-color: darkgrey;    
+}
+
+.pad{
+    padding-bottom: 2%
 }
 
 .full-div {
@@ -352,30 +344,17 @@ color: white;
     margin-right: 5%;
 }
 
-.gen-mar {
-    margin-right: 3%;
-    font-size: 1.1rem;
-    font-weight: 500;
+
+
+/* _________Add/Edit Recipe___________ */
+
+
+.edit-btn {
+   margin-right: 10%;
 }
-
-.gen-styl-link {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-
-.styl-nav-foot {
-    margin-bottom: 10%;
-}
-
-.add-styl {
-    margin-right: 2%;
-}
-
-/* edit page */
 
 .add-btn-edit {
-    font-size: 1.5vw;
+    font-size: 1.1rem;
     color:#846C63;
 }
 
@@ -387,124 +366,106 @@ color: white;
     margin-top:3%;
 }
 
-/* label{
-font: 1rem!important;
-} */
-
-/* full-recipe */
-.btn-fav {
-    background-color: #F0E5D7;
-    color: #846C63;
-    font-weight: 600;
+.edit-div {
+    margin-top: 5%;
 }
-.btn-fav:hover {
-    color: #f1e2ce;
-    background-color: #846C63;
-    font-weight: 600;
+
+.font-ing {
+    font-size: 1rem;
 }
 
 
 
+/* _________Media queries___________ */
 
-
-
-@media (max-width: 1060px) {
+@media (max-width: 1300px) {
     .edit-btn {
         margin-top: 3%;
         margin-bottom: 5%;
         margin-right: 0px;
-        display: block;
-
-    }
-}
-
-
-
-  @media (max-width: 995px) {
-    .coffee-logo{
-        margin-left: 70%;
-    }
-
-    main {
-        width: 100%;
-        display: contents;
-        margin: 0px;
+      
+    
     }
 
     .ticks {
         width: 46%; 
-        left: 2%;
-        top: 17%;
-        font-size: 2vw;
-        padding-left: 2%;
-        padding-bottom: 2%;
-       
     }
-
-    .block-search {
-        display:block;
-       
-    }
-    .longer {
-        width: 100%;
-    }
-  }
-
-  @media (max-width: 767px) {
-   
-    main {
-        width: 100%;
-        display: contents;
-        margin: 0px;
-    }
-
-    nav .brand-logo {
-        
-        left: 50%;
-        font-size:7vw;
-    }
-
-    .coffee-logo{
-        margin-left: 70%;
-    }
-
-    .ticks {
-        width: 90%; 
-        left: 2%;
-        top: 17%;
-        font-size: 4vw;
-        padding-left: 2%;
-        padding-bottom: 2%;
-    }
-
-    .row .col.s9 {
-        width: auto;
-    }
+}
 
 
-  }
+@media (max-width: 996px) {
+.coffee-logo{
+    margin-left: 70%;
+}
 
-
-
-/* .full-rec-name {
+main {
+    width: 100%;
+    display: contents;
     margin: 0px;
 }
 
-.pad {
-    padding: 0px;
-} */
+.ticks {
+    width: 48%; 
+    left: 2%;
+    top: 22%;
+    font-size: 2vw;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.styl-nav-foot {
+    margin-bottom: 3%;
+}
 
 
-/* .grid { 
-    display: grid;
-    grid-template-columns: 1fr 2fr;      
-} */
+.block-search {
+    display:block;
+    
+}
+.longer {
+    width: 100%;
+}
 
-/* color: #88AAA9!important; */
+.rec-widt-2 {
+    display:flex;
 
-/* .flash-styl {
-    font-size: 1.5rem;
-    color: #846C63;
-    padding-top: 1%;
-    padding-bottom: 1%;
-} */
+}
+}
+
+@media (max-width: 767px) {
+
+main {
+    width: 100%;
+    display: contents;
+    margin: 0px;
+}
+
+nav .brand-logo {
+    
+    left: 50%;
+    font-size:7vw;
+}
+
+.coffee-logo{
+    margin-left: 70%;
+}
+
+.ticks {
+    width: 90%; 
+    left: 2%;
+    top: 20%;
+    font-size: 4vw;
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
+
+
+}
+
+@media (min-width: 1400px) {
+
+.ticks {
+        width: 29%;
+    }
+}
