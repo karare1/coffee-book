@@ -380,8 +380,6 @@ background-color: #BDB1AD;
 
 @media (max-width: 1300px) {
     .edit-btn {
-        margin-top: 3%;
-        margin-bottom: 5%;
         margin-right: 0px;
       
     
@@ -406,7 +404,7 @@ background-color: #BDB1AD;
 
 .ticks {
     width: 48%; 
-    left: 2%;
+    left: 10%;
     top: 30%;
     font-size: 2vw;
     padding-left: 2%;
@@ -437,8 +435,8 @@ background-color: #BDB1AD;
 
 main {
     width: 100%;
-    display: contents;
-    margin: 0px;
+    object-fit: fill;
+    /* margin: 0px; */
 }
 
 nav .brand-logo {
@@ -460,6 +458,19 @@ nav .brand-logo {
     padding-bottom: 2%;
 }
 
+/* .edit-btn1 {
+    margin-right: 0px;
+    margin-bottom: 2%;
+    } */
+
+}
+
+@media (max-width: 400px) {
+
+.edit-btn {
+    margin-right: 0px;
+    margin-bottom: 5%;
+}
 
 }
 
