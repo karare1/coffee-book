@@ -406,7 +406,7 @@ background-color: #BDB1AD;
     width: 48%; 
     left: 10%;
     top: 30%;
-    font-size: 2vw;
+    /* font-size: 2vw; */
     padding-left: 2%;
     padding-bottom: 2%;
     
@@ -451,17 +451,13 @@ nav .brand-logo {
 
 .ticks {
     width: 90%; 
-    left: 2%;
+    left: 3%;
     top: 30%;
-    font-size: 4vw;
+    /* font-size: 4vw; */
     padding-left: 2%;
     padding-bottom: 2%;
 }
 
-/* .edit-btn1 {
-    margin-right: 0px;
-    margin-bottom: 2%;
-    } */
 
 }
 
