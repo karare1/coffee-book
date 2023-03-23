@@ -380,9 +380,7 @@ background-color: #BDB1AD;
 
 @media (max-width: 1300px) {
 .edit-btn {
-    margin-right: 0px;
-    
-
+    margin-right: 0px;  
 }
 
 .ticks {
@@ -397,7 +395,6 @@ background-color: #BDB1AD;
 .coffee-logo{
     margin-left: 70%;
 }
-
 
 .ticks {
     width: 48%; 
