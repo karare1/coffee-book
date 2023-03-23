@@ -379,15 +379,17 @@ background-color: #BDB1AD;
 /* _________Media queries___________ */
 
 @media (max-width: 1300px) {
-    .edit-btn {
-        margin-right: 0px;
-      
+.edit-btn {
+    margin-right: 0px;
     
-    }
 
-    .ticks {
-        width: 46%; 
-    }
+}
+
+.ticks {
+    width: 46%; 
+    top:50%;
+    font-size: 1rem;
+}
 }
 
 
@@ -396,19 +398,15 @@ background-color: #BDB1AD;
     margin-left: 70%;
 }
 
-/* main {
-    width: 100%;
-    display: contents;
-    margin: 0px;
-} */
 
 .ticks {
     width: 48%; 
     left: 10%;
     top: 30%;
-    /* font-size: 2vw; */
+    font-size: 2vw;
     padding-left: 2%;
     padding-bottom: 2%;
+    font-size: 1rem;
     
 }
 
@@ -433,11 +431,6 @@ background-color: #BDB1AD;
 
 @media (max-width: 767px) {
 
-main {
-    width: 100%;
-    object-fit: fill;
-    /* margin: 0px; */
-}
 
 nav .brand-logo {
     
@@ -452,8 +445,8 @@ nav .brand-logo {
 .ticks {
     width: 90%; 
     left: 3%;
-    top: 30%;
-    /* font-size: 4vw; */
+    top: 50%;
+    font-size: 1rem;
     padding-left: 2%;
     padding-bottom: 2%;
 }
