@@ -239,6 +239,8 @@ Manual Testing of implemented features: <br><br>
 |-------------|------------|---------------------|-------------------|
 | CANCEL button  | Click on cancel button | Once in 'Edit recipe form', if a user does not want to submit any changes, clicking on Cancel button, they will be redirected to their profile page  | Works as expected |
 | EDIT YOUR RECIPE button  | Click on 'Edit your recipe' button | Clicking on the button, changes will be stored and the updated recipe version will be displayed in 'recipes' page as well as in user's profile. | Works as expected |
+
+
 <br><br>
 All original content has been checked - if retrieved properly - works as expected
 <br>
@@ -266,6 +268,9 @@ All input fields validation and requirements - works as expected
 | CATEGORY IMAGE URL  | Input url into the Category Image Url | It is optional to add Image URL | Works as expected |
 | ADD COFFEE CATEGORY button  | Click on the button | It will display flash message (confirmation)  and redirect an admin to 'coffee category' page. New category will be added on 'Coffee Category' page | Works as expected |
 | EDIT COFFEE CATEGORY button  | Click on the button | It will display flash message (confirmation) about update and redirect an admin to 'Coffee Category' page. The updated category will be displayed on 'Coffee Category' Page | Works as expected |
+
+
+
 <br><br>
 All original content has been checked - if retrieved properly - works as expected
 <br>
@@ -282,7 +287,8 @@ All input fields validation and requirements - works as expected
 - CSS
   The W3C Jigsaw Validator was used to validate the CSS of the website. <br>
   No errors detected. <br>
-  <!-- [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkarare1.github.io%2Fquiz-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) -->
+  [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+   [(Jigsaw) validator result](static/testing/CSS-validator.png)
 
 - CI Python Linter was used as a Python validator
   No errors detected
@@ -299,10 +305,16 @@ All input fields validation and requirements - works as expected
   [Wave Web report](static/img/wave-evaluation.png)
 
 - Lighthouse reports: <br><br>
-  [Lighthouse report Index](assets/lighthouse/lighthouse-report-index.png) <br>
-  [Lighthouse report Game](assets/lighthouse/lighthouse-report-game.png) <br>
-  [Lighthouse report Result](assets/lighthouse/lighthouse-report-result.png) <br>
-  [Lighthouse report Score](assets/lighthouse/lighthouse-report-score.png) <br>
+  [Lighthouse report Home](static/testing/lighthouse-home.png) <br>
+  [Lighthouse report Recipes](static/testing/lighthouse-recipe.png) <br>
+  [Lighthouse report Log In](static/testing/lighthouse-login.png) <br>
+  [Lighthouse report Sign Up](static/testing/lighthouse-signup.png) <br>
+  [Lighthouse report Add recipe](static/testing/lighthouse-add-recipe.png) <br>
+  [Lighthouse report Add category](static/testing/lighthouse-add-category.png) <br>
+  [Lighthouse report Edit recipe](static/testing/lighthouse-edit-recipe.png) <br>
+  [Lighthouse report Recipes](static/testing/lighthouse-edit-category.png) <br>
+  [Lighthouse report Full recipe](static/testing/lighthouse-full-recipe.png) <br>
+ 
 
 
 - Further testing has been done with Chrome DevTools, making sure that responsiveness works correctly on all devices.
