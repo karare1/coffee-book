@@ -398,16 +398,16 @@ background-color: #BDB1AD;
     margin-left: 70%;
 }
 
-main {
+/* main {
     width: 100%;
     display: contents;
     margin: 0px;
-}
+} */
 
 .ticks {
     width: 48%; 
     left: 2%;
-    top: 22%;
+    top: 30%;
     font-size: 2vw;
     padding-left: 2%;
     padding-bottom: 2%;
@@ -454,7 +454,7 @@ nav .brand-logo {
 .ticks {
     width: 90%; 
     left: 2%;
-    top: 20%;
+    top: 30%;
     font-size: 4vw;
     padding-left: 2%;
     padding-bottom: 2%;
